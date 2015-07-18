@@ -1,0 +1,1028 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Keven's Blog</title>
+    <link>http://kvenux.tk</link>
+    <description></description>
+    
+      <item>
+        <title>将Android Studio工程转换到Eclipse下</title>
+        <link>http://kvenux.tk/2014/11/27/transfrom-studio-to-eclipse.html</link>
+        <guid isPermaLink="true">http://kvenux.tk/2014/11/27/transfrom-studio-to-eclipse.html</guid>
+        <pubDate>Thu, 27 Nov 2014 00:00:00 +0800</pubDate>
+        <description>&lt;p&gt;不要问我为什么这么做，就是这么任性。
+╮(╯▽╰)╭其实渣渣网络表示满足不了gradle联网的需求。&lt;/p&gt;
+
+&lt;h3&gt;1.新建工程&lt;/h3&gt;
+
+&lt;p&gt;工程名称随意，包名要和原工程工程一致，直接去找原来工程的.java，像如下字段:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;package com.oguzdev.circularfloatingactionmenu.samples;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://kvenux.qiniudn.com/newpro.jpg&quot; alt=&quot;此处输入图片的描述&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;若是Lib工程，取消：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Create custom launcher icon&lt;/li&gt;
+&lt;li&gt;Create acvtivity&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;勾上：Mark this project as a library&lt;/p&gt;
+
+&lt;h3&gt;2. Ctrl C&amp;amp;V&lt;/h3&gt;
+
+&lt;p&gt;把原工程的src, res, AndroidManifest复制到新工程，覆盖即可。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://kvenux.qiniudn.com/transform.png&quot; alt=&quot;此处输入图片的描述&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;可以看到目录里面都是与gradle有关的文件，那个AndroidTest貌似是Studio每次建工程都有，不用管它。有用的文件都在main下面。&lt;/p&gt;
+
+&lt;p&gt;方法很简单，出bug再说吧~&lt;/p&gt;
+</description>
+      </item>
+    
+      <item>
+        <title>利用js定时发送微信</title>
+        <link>http://kvenux.tk/2014/11/23/js-sendwechat.html</link>
+        <guid isPermaLink="true">http://kvenux.tk/2014/11/23/js-sendwechat.html</guid>
+        <pubDate>Sun, 23 Nov 2014 00:00:00 +0800</pubDate>
+        <description>&lt;p&gt;具体的场景是，妹子\好基友要过生日了，而你应该在午夜12点准时发信息对不对？嗨，可惜了，前天晚上失眠没睡着，这才8点多困的一笔，我总不能设个闹钟吧。&lt;/p&gt;
+
+&lt;p&gt;自动发！短信什么的又太low BEE（两只小蜜蜂）了，发掘一下微信怎么整。优雅一谷歌，居然在知乎上出现了。知乎上的技术贴真是阳春白雪啊~&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.zhihu.com/question/20923380&quot;&gt;微信有没办法定时发送？&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;Chrome的控制台&lt;/h2&gt;
+
+&lt;p&gt;Chrome有个很神奇的控制台，居然可以像python那样执行语句！今天才知道╮(╯▽╰)╭&lt;/p&gt;
+
+&lt;p&gt;按F12开控制台，进入一个全新的世界。奥对了，在这之前你要登录网页版微信，把聊天切给TA。&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;nx&quot;&gt;setTimeout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;.chatInput&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;str1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;.chatSend&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;click&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2014&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;23&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()));&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;原理如下：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;setTimeout(para1,para2)是设置一个定时器，para2的时间后，执行para1的函数。&lt;/li&gt;
+&lt;li&gt;执行的函数意思是，找到input栏设置发送的文本，然后替你点一下按钮&lt;/li&gt;
+&lt;li&gt;para2中的两个Date的差是按毫秒计，还有构造方法很蛋疼，日期别的都是1开头，月份是从0开始，因为1~12月是用0~11来表示的，本来是11月非要写个10。。。打你哦&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;So，你所要做的，设好那几个字符串，把时间也调好。然后挂着网页回去睡觉去。&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;nx&quot;&gt;str1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;祝你来年更开(2)心(b)&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;setTimeout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;.chatInput&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;str1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;.chatSend&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;click&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();},&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2014&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;23&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()));&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;总结：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;JavaScript为毛没早点搞&lt;/li&gt;
+&lt;li&gt;射手座二货不解释&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+      </item>
+    
+      <item>
+        <title>浪潮之巅——Intel和他的x86</title>
+        <link>http://kvenux.tk/2014/11/18/intel-tough-man.html</link>
+        <guid isPermaLink="true">http://kvenux.tk/2014/11/18/intel-tough-man.html</guid>
+        <pubDate>Tue, 18 Nov 2014 00:00:00 +0800</pubDate>
+        <description>&lt;p&gt;Intel像一个爷们，而且是偏执狂，他关注用户需求，懂得坚持自我，坚信勤能补拙。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;我现在这么努力，都是为了证明当初选择的正确。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2&gt;发迹史&lt;/h2&gt;
+
+&lt;p&gt;1957年，‘仙童’半导体成立，英文名FairChild，我原先以为这英文名是音译的，原来特么是直译啊（看音译‘费尔柴尔德’，联想到了Rothschild）。&lt;strong&gt;半导体之父&lt;/strong&gt;肖克利（W.Shockley）博士，离开&lt;strong&gt;贝尔实验室&lt;/strong&gt;，来到&lt;strong&gt;硅谷&lt;/strong&gt;，创办&lt;strong&gt;肖克利实验室&lt;/strong&gt;，吸引了八名青年才俊。后来由于科学家不会管理，才俊先后奔走，人称&lt;a href=&quot;http://baike.baidu.com/view/647403.htm&quot;&gt;八叛逆&lt;/a&gt;（The Traitorous Eight）。其中包括Intel的创始人，N. Noyce\R.Moore。AMD的创始人是仙童公司的销售部长，后来也出走了。如果换乔帮主更优雅一点的说法：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;“仙童半导体公司就象个成熟了的蒲公英，你一吹它，这种创业精神的种子就随风四处飘扬了。”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Intel最初只能给IBM\DEC打打下手，做做边角料，生产些低端处理器。当时计算机都是大号的（吐槽，我们初高中时代学信息课，非要死记硬背的巨型机\大型机\小型机\微机，背这玩意儿有毛用，大部分人一辈子也见不到除了微机以外的机器），IBM作为一名忠厚老实的老大哥，是不愿意搞一些小玩意儿的。搞PC也懒得去设计处理器，写操作系统，直接扔给了Intel和微软。在70年代末80年代初，曾涌现出一大批微处理器，德州仪器、摩托罗拉、贝尔实验室，但如今人们提起微处理器，各类网站教科书全都齐刷刷地指向Intel 8086，因为它被那个时代选中了，它并不是第一批微处理器，也不是第一个技术专利，而是PC开始走向千家万户的一个象征。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;其实当时的现实远没有那么美好，但人们，特别是媒体，回过头来看时，总是给成功者们一个相对优雅一点的标签。牛逼的人，小时候放个P都是香的。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;我觉得，看计算机这60年的历史，还是真实一点吧。&lt;/p&gt;
+
+&lt;h2&gt;专注的力量&lt;/h2&gt;
+
+&lt;p&gt;Intel所处的80年代，也正好是日本经济腾飞的时期，当时日本股市占了全世界的一半。PC里面接近6成的芯片由日本公司出产，日本人甚至急于把美国的半导体工业踩在脚下。&lt;/p&gt;
+
+&lt;p&gt;Intel审时度势，当时果断关闭了内存业务，专心做处理器，并大规模加大处理器的研发费用，势要把技术密集型进行到底。80386的总研发费用3亿美元，这笔钱放当时超过了中国的五年计划的科研投入。后来的日本股市市值大蒸发，经济倒退二十年。资金密集型的日本半导体也很难跟Intel叫板了。&lt;/p&gt;
+
+&lt;p&gt;当时摩托罗拉技术上是优于Intel的，但其受限于体制问题，moto更像是老人，大的变动就伤筋动骨，Intel更像年轻人，善于调整，面对市场积极变化。而且处理器仅仅是MOTO的一个部分，对Intel来讲是整个江山。moto是无法像Intel那样下血本的。&lt;/p&gt;
+
+&lt;h2&gt;臭就是臭，说的就是你，CISC！&lt;/h2&gt;
+
+&lt;p&gt;我的专业方向是系统结构，记得当时整个大三，我都在纠结一个问题，RISC这么NB，为啥Intel不用？&lt;/p&gt;
+
+&lt;p&gt;首先，RISC为啥NB？
+人类在研究计算机硬件结构时，习惯把生产生活中的经验贯彻其中，形成的学科称之为计算机体系结构。Intel由于时代所限，最开始采取了复杂指令集（CISC）沿用至今。&lt;/p&gt;
+
+&lt;p&gt;我还是打个比方吧。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;把处理器比作厨子，内存比作库房。&lt;/li&gt;
+&lt;li&gt;假设：顾客对菜品的味道、风格没有要求，只关注其营养（功能）是否到位。&lt;/li&gt;
+&lt;li&gt;评价标准：上菜效率&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;这样一来，CISC就是一家中餐馆：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;菜谱（指令集）上有简单的清炒芥兰、麻婆豆腐，还有复杂的北京烤鸭、佛跳墙，做一道菜的时间是不相等的，而且差异很大，工序复杂，这样一来流水线作业就显得很困难，锅里还炖着佛跳墙呢，下一道菜洗好切好也没用啊，反正都得等&lt;/li&gt;
+&lt;li&gt;一般做菜的时候就得取菜（访存），工作台（寄存器）有限，菜做成半成品没地放，还得送回库房&lt;/li&gt;
+&lt;li&gt;服务员（编译器）会根据顾客的点菜情况，安排厨师的做菜顺序（优化），这种情况下次序安排组合太少，效率改善不大&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;RISC更像是西餐（讨厌西餐=-=）：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;菜谱上全是简单的菜品，菜名格式统一（指令集规整），都三个字的（想不出别的比喻了），比如西兰花，炸鸡腿，烤披萨（做披萨真的巨特么简单），而且做这些菜的时间是差不多的（执行步调统一），工序简单，易于实现流水线，更中餐馆比，可能菜要多上几个&lt;/li&gt;
+&lt;li&gt;工作台大，半成品有地方放，做菜的时候只从工作台取，工作台上没有的再去库房&lt;/li&gt;
+&lt;li&gt;服务员能灵活调整做菜顺序，提高厨师效率&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;（唔。。。终于举完了，T_T）&lt;/p&gt;
+
+&lt;p&gt;用行话说，RISC的优势在于：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;更好地迎合了存储指令的密度，缓和了存储墙问题，加速常用指令&lt;/li&gt;
+&lt;li&gt;指令集规整，固定指令长度，易于流水线实现&lt;/li&gt;
+&lt;li&gt;编译器优化空间大&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;对于Intel的故事是，一开始就开了一家中餐馆，开了一半发现西餐馆特别有效率，对他自己厨师的效率提出了相当严峻的挑战。但为了维护顾客群体，不能关了中餐馆再开一家西餐馆啊，这样之前的回头客就都没了，只能硬着头皮继续做中餐。&lt;/p&gt;
+
+&lt;p&gt;由于效率不如人，业界骂声一片：他们中餐馆做个菜等老半天，大家别去那家吃饭了！面对这种情况，Intel坚定地坚持中餐路线一百年不动摇，一方面砸钱给研发部，买几千块的菜刀，上万块钱的炉子（这些都是在说制造工艺啦，不知道能不能意会），厨子虽然比不上人家，但基础设施甩你们几条街啊；另一方面请一些做西餐的厨子吸取经验，菜单还是老菜单，但厨房内部可以按西餐的方法来调整（微程序）。&lt;/p&gt;
+
+&lt;p&gt;后来的故事，大家渐渐发现，西餐厨师理论上那么牛，可开起来的馆子效率上就是比不过Intel家的。争论也就逐渐缓和了。&lt;/p&gt;
+
+&lt;p&gt;好了，结束这个糟糕的比喻。90年代中期后，Intel对自身CPU的微结构不断调整，从微结构来看，已经很难说是CISC了。实际上，Intel的处理器在指令译码阶段就像RISC方向转化，后端流水线已经是RISC形式。
+随着体系结构和微电子技术的进步，CISC在结构上的劣势也在逐渐缩小。RISC阵营在此期间，本来市场就不大，还各自为战，结果在与Intel的商界论战中节节败退。&lt;/p&gt;
+
+&lt;h2&gt;向前兼容&lt;/h2&gt;
+
+&lt;p&gt;Intel是个典型的商人，顾客即是上帝。为了向前兼容，不惜逆着时代潮流（RISC vs CISC）趟出一条血路。&lt;/p&gt;
+
+&lt;p&gt;用户都是懒惰的，换机器可以，换软件可办不到，软件还得一个一个买新的，多麻烦啊。开发人员就更不想换了，直接换一套体系，所有的东西推倒重来，这种事情想都不敢想。&lt;/p&gt;
+
+&lt;p&gt;Intel的做事策略，勤能补拙。技术上有劣势，拿钱砸啊，不到最后谁能证明这条路是错的？只要市场的那块蛋糕在手，我就稳如泰山，岿然不动。与其说，Intel搞死了竞争对手，不说说，对手们都是纷纷给憋死了。只要你执着，媳妇终有一天熬成婆。&lt;/p&gt;
+
+&lt;p&gt;这里要请出革命路上好基友，微软小亲亲。一开始，&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;微软：只是因为人群中多看了对方一眼，从此再也不能忘记你容颜。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;PC时代的美好童话，在IBM这个倒霉的媒人一挥手之后，正式拉开序幕。从此之后Bill（Bill Gates）要什么，Andy（Intel CEO）就给什么（Andy-Bill定律）。夫唱妇和，过着你挑水来我浇园的幸福生活。&lt;/p&gt;
+
+&lt;p&gt;他俩为什么能走到一起，因为有共同的人生追求：向前兼容。保证用户之前的软件能用，就意味着能留着顾客。要没了顾客，他俩什么也没有。后来的故事我们也知道了，这两位仁兄一个拉需求，一个给产品，在摩尔定律的印证下，成就了辉煌的PC时代。&lt;/p&gt;
+
+&lt;h2&gt;AMD小弟弟&lt;/h2&gt;
+
+&lt;p&gt;显卡吧流传着这样一句话，i3默秒全。Intel家的低端i3能秒AMD全家，黑的就是AMD。&lt;/p&gt;
+
+&lt;p&gt;小弟弟是由仙童的销售部长一手带大的，风格像极了一个销售人员。在市场需求的驱动下，做更便宜的产品。市场需要什么就做什么。同时为了躲开反垄断，Intel也带着AMD做CPU。后来大哥烦了，不想让小弟抄，80386就打了一场打官司。法庭的仲裁结果是，小弟可以接着生产。有时候就打打闹闹，但总然会达成和解，小弟与大哥之间也是亦敌亦友，遇到RISC挑战这种生死存亡的情况，他俩还是要团结起来相互依存。&lt;/p&gt;
+
+&lt;p&gt;奔4的超长流水线，没让自己火起来反而让AMD风光了一把（当年的雷鸟vs奔3的精彩段落依旧历历在目）。小弟也借后来的64位在高端市场来挑战Intel。但大哥总归是大哥，酷睿之后就把小弟打得翻不起身。后来就有了‘i3默秒全’的故事。&lt;/p&gt;
+
+&lt;h2&gt;Tough Man with his Tough Future&lt;/h2&gt;
+
+&lt;p&gt;能力越大，责任越大。市场占有率如此高的Intel，压力也非同小可。前几年提的超极本也没成多大气候。后PC时代，移动终端迅速崛起，又让Intel开始修补起功耗这个短板。&lt;/p&gt;
+
+&lt;p&gt;这次的敌人不再是当年那一群各自为战的乌合之众，是一个卖授权为主的ARM公司。Intel的性能优势毋庸置疑，但能耗比要输于ARM。而且Intel赖以为寄的市场是通用PC，换到移动终端，单个产品的利润降低，市场减小，这很不符合Intel的做事习惯，当然这种小打小闹下Intel也很难盈利。未来还是很艰难，但愿这位纯爷们，不要在移动领域丢了市场。&lt;/p&gt;
+
+&lt;p&gt;总结：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;要专注，而且要很偏执地专注&lt;/li&gt;
+&lt;li&gt;市场决定企业生存，技术落后并不可怕&lt;/li&gt;
+&lt;li&gt;世界都在指责你的时候，试着忽略那些耳边的声音，抓住问题的本质&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+      </item>
+    
+      <item>
+        <title>利用nodejs搭建微信机器人</title>
+        <link>http://kvenux.tk/2014/11/17/nodejs-webot.html</link>
+        <guid isPermaLink="true">http://kvenux.tk/2014/11/17/nodejs-webot.html</guid>
+        <pubDate>Mon, 17 Nov 2014 00:00:00 +0800</pubDate>
+        <description>&lt;h2&gt;一直想弄个机器人&lt;/h2&gt;
+
+&lt;p&gt;今年4月，小剑哥百废待兴之时曾经认真考虑过，弄个订阅号在上面定期发文章。因为我发现每晚9点半以后我是没有任何效率的，但这时候用来写东西或者看东西是个很明智的决定。那时注册了一个名为“健康指导”的订阅号，噗~名字是挺烂的，尝试过写了几篇，但发现我擦这个事情推起来很难啊。于是进入了喜闻乐见的低优先级和拖延节奏，没了下文。至于9点半以后。。╮(╯▽╰)╭&lt;/p&gt;
+
+&lt;p&gt;再后来从俱乐部MONK那里接手了公众号，把玩了几下发现很是有意思。微信平台接受你自建服务器来处理消息，它本身是一个消息转发者。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://kvenux.qiniudn.com/webotlogic.png&quot; alt=&quot;此处输入图片的描述&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;最早沿用了MONK君用的SAE，怎么说呢，拿它来搞WordPress还是极好的，因为一键搞定不需要改代码。修改代码可就蛋疼了，来我们看看界面。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://kvenux.qiniudn.com/saecoding.jpg&quot; alt=&quot;此处输入图片的描述&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;不忍吐槽啊，字体都改不了，这是个什么渣渣编辑器。。。
+当然可以用SVN，但这样调试起来很麻烦啊，传代码看效果得多长时间T_T。。。呐，除非本地搭个服务，好嘛，既然如此我用VPS了为何用你。&lt;/p&gt;
+
+&lt;p&gt;不过吐槽归吐槽，我还是尝试了用SAE进行分词，效果很不错。对了这时候我用的python。&lt;/p&gt;
+
+&lt;h2&gt;重启线程&lt;/h2&gt;
+
+&lt;p&gt;那日听闻nodejs很火，抱着试一试的心态在github里搜了nodejs，居然蹦出来一个&lt;a href=&quot;https://github.com/node-webot/wechat&quot;&gt;wechat项目&lt;/a&gt;。不说了搞吧&lt;/p&gt;
+
+&lt;h2&gt;NodeJS&lt;/h2&gt;
+
+&lt;p&gt;本人web服务盲一枚，那些东西就听过个大概解释，没有实际学过用过。搭博客的时候，觉得添加评论是个很麻烦的东西，拿来别人的代码一看，卧槽居然就两三行JavaScript代码。后来读到一个精妙的比喻：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;HTML是骨骼
+CSS是皮肤
+JS是各种技能&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;当然这些技能最好分开写，不要和结构放一起。技能需要解析器（比如HTML页面里，浏览器充当了解析器的角色）才能释放，那么好，我需要单独释放技能怎么办？NodeJS替你搞定。&lt;/p&gt;
+
+&lt;p&gt;话说回来，为啥要单独释放技能捏？这些技能吧，比如处理业务逻辑，上传\下载个表单，其实是连接前后端的桥梁，骨骼皮肤再美，没法操作数据库实现具体功能啊。有时候的WEB服务需要单独实现功能，所以NodeJS实现了这点，让前端程序员跳出浏览器窗口，开发出大量的前端工具。有点一统前后端的意思。&lt;/p&gt;
+
+&lt;h2&gt;神奇的包管理工具&lt;/h2&gt;
+
+&lt;p&gt;项目下编辑好package.json，一条npm install就能把所有依赖的包都搞定。&lt;/p&gt;
+
+&lt;h2&gt;换一种形式打动你&lt;/h2&gt;
+
+&lt;p&gt;添加了一条指令来查看每位Member的成就达成。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://kvenux.qiniudn.com/careerkeven.jpg&quot; alt=&quot;此处输入图片的描述&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;换种表达方式立刻温暖人心。&lt;/p&gt;
+
+&lt;p&gt;欢迎各大头马俱乐部fork&lt;a href=&quot;https://github.com/kvenux/beihangtmc-webot&quot;&gt;我们的代码&lt;/a&gt;&lt;/p&gt;
+</description>
+      </item>
+    
+      <item>
+        <title>CC1 IceBreaker---Run for Your Life</title>
+        <link>http://kvenux.tk/2014/11/10/CC1-run-for-your-life.html</link>
+        <guid isPermaLink="true">http://kvenux.tk/2014/11/10/CC1-run-for-your-life.html</guid>
+        <pubDate>Mon, 10 Nov 2014 00:00:00 +0800</pubDate>
+        <description>&lt;h2&gt;Run for Your Life&lt;/h2&gt;
+
+&lt;p&gt;Have you ever been experienced a kind of feeling that you&amp;#39;ve been totallly given up by someone you love?
+I&amp;#39;ve been there once. At that time she said &amp;#39;You&amp;#39;re a nice person, but not the right one for me.&amp;#39;
+I was really sad. For me, she was my love, she was my hope, she was my whole world. I couldn’t accept the truth that I would never see that smile on her face again. Apparently I had to get over her which was supposed to be the most difficult thing for me to do.&lt;/p&gt;
+
+&lt;p&gt;After that, my world crushed. Everything in my life turned into grey. I didn’t want to work, I didn’t want to go out with my friends, I even skipped the match of my favourite football team which I used to seeing a lot. I was sitting in front of the computer all day long, drinking beer and playing some computer games. My life was miserable. What’s even worse, I realized that I couldn’t find where myself really is.&lt;/p&gt;
+
+&lt;p&gt;Luckily, those days didn’t last long. One day I saw a famous movie again, Forest Gump, when Forest was abandoned by Jenny, he couldn’t help running. I thought maybe I should have a try. I mean, both of us were trying to get rid of the pain that some girls gave to us.&lt;/p&gt;
+
+&lt;p&gt;So I started to run. At first, I kept running for 30 minutes every afternoon. Then 45 minutes, and then even an hour. At 5 o’clock every afternoon, I felt that my body was burning. It was like a strong voice shouting at me---&amp;#39;Run, Keven, Run for your life!&amp;#39;&lt;/p&gt;
+
+&lt;p&gt;Later, I discovered that something different was happening in my life.
+I got more focused on my work and I was able to enjoy it. I began to hang out with my friends, playing some card games. And I loved to see Arsenal&amp;#39;s games although they like selling out their captains. I got all my passion back and I found that life is such an amazing thing. To tell you the truth, as I ran 8km a day, I lost about 20 pounds weight during those days. What’s more surprising is that my sleeping problem was gone!&lt;/p&gt;
+
+&lt;p&gt;Running really became a way to challenge myself. It seems that there is a guy, and I need to defeat him. Running allows me to truly climb hills and clear obstacles. It gives me a strong feeling of freedom that my legs and my body are so strong. Thanks to running, confidence come back to me.&lt;/p&gt;
+
+&lt;p&gt;Then I pushed myself to try new things. I joined students union of our department, and passed the election to be the president. I began to play piano although I‘m not so good at it. I even participated in a Toastmaster club to enhance my communication skills. For me now, I’m not afraid of expressing myself in front of people. My audience love my speech, of that I‘m sure.&lt;/p&gt;
+
+&lt;p&gt;When I am running, I can feel my own breath, and my own heart-beating. This is the evidence that shows I am alive. As before, when I was alone, I spent a lot of time on computer and cellphone, playing games, watching videos or updating social network pages. While I was doing all these stuff, I was not with myself. Fortunately, I found that running gave me the chance to actually be with myself. And as soon as I learn to be with myself, I get the power to face those tough things. That dude told me, someone who doesn’t love you would not be the one. Move on to find her. You know what, she&amp;#39;s near, of that I‘m sure.&lt;/p&gt;
+
+&lt;p&gt;Dear friends, when you are down, when you fail the exam, or especially when you are dumped by your boyfriend/girlfriend, get to run. Go to find yourself back and take good care of him.&lt;/p&gt;
+
+&lt;h2&gt;跑步的时间线&lt;/h2&gt;
+
+&lt;p&gt;一开始是为了减肥，因为高三那年我很清楚地记得体重秤上的数字，79，那时的状态是无任何体育锻炼，身体很虚，整个那一年我都在不停地对自己的身体进行否定。多年以后翻出当年的高考准考证，面对镜头那个小胖子捋顺了油光锃亮的头发，嘴角还带着一丝皮笑肉不笑。跟阳光这种词完全搭不上边啊，不忍直视。&lt;/p&gt;
+
+&lt;p&gt;大一刚来就开始尝试跑步。北京跟我家属于同一纬度，海拔差距2200，大气压从77kPa到了我们熟悉的101kPa，可以直观地理解为我的生存环境的含氧量瞬间多了1/3。这种差距最明显的就是跑步，在家里我跑1km简直就是要老命，长跑或者慢跑基本上从来没远过3km。当然这种高海拔也是有好处的，比如肺活量是5800。&lt;/p&gt;
+
+&lt;p&gt;体重一直在75左右浮动，大二下开始健身，减脂和增肌之间一直不好平衡，跑步的事情也从来没养成习惯。不过那时跑个20圈算是可以很得瑟的一个资本。10年智能手机出现，有时靠计步软件分享个10km装个X。&lt;/p&gt;
+
+&lt;p&gt;正式开始跑步还是如前文所说的，12年年初，下了很大的决心，也是为了缓解自己压抑的生活，开始了纯有氧。那时对自己的身体的改造是革命性的，放弃无氧，开始大规模节食。3月份开始时体重是75，4月底已经68，一度触到过66的线。偶尔有天发现自己腹肌轮廓显现，便也顺带练练腹肌。跑步这个习惯算是养成了。&lt;/p&gt;
+
+&lt;p&gt;再后来跑步一直保持，每周三四次，每次4\5km。直到读到一本书，&lt;a href=&quot;http://www.amazon.cn/%E6%97%A0%E5%99%A8%E6%A2%B0%E5%81%A5%E8%BA%AB-%E7%94%A8%E8%87%AA%E8%BA%AB%E4%BD%93%E9%87%8D%E9%94%BB%E7%BB%83-%E9%A9%AC%E5%85%8B%E2%80%A2%E5%8A%B3%E4%BC%A6/dp/B008YS7LRA/ref=sr_1_cc_1?s=aps&amp;amp;ie=UTF8&amp;amp;qid=1415591853&amp;amp;sr=1-1-catcorr&amp;amp;keywords=%E6%97%A0%E5%99%A8%E6%A2%B0%E5%81%A5%E8%BA%AB&quot;&gt;无器械健身&lt;/a&gt;，把跑步喷得挺狠。想想也对，人的身体是一个非常懒惰的机体，他只求适应是不会主动改变的。跑步时间长了，越来越省力，越来越轻松，给身体带来的变化越来越小，但对于人体的肌肉组织、膝盖却是个长期的劳损。所以我的态度也转变了，不再强迫自己去长期地、有规律地、长时间地跑步，只当愉悦身心，调节生活节奏。&lt;/p&gt;
+
+&lt;p&gt;13年春又一次去奥森跑步，15km，没怎么热身，加之天气凉，膝盖疼了好久，此为隐患。14年报了北马，开跑之前训练没有规律，加之跑步姿势不正确，上了20整个膝盖就不好了。北马跑了一半多一点就放弃了，那天的经历很开心。但领完行李拖着病腿从奥体回来时，听到路边排山倒海的加油，还是略为遗憾的。
+不过就这样吧，我还是倾向于打打球，练练肌肉，把注意力集中于那些能给身体带来改变的运动。跑步对我来说，不是非要一天15km，年底非要完成马拉松的运动，而是听听音乐看看风景pm低的时候享受空气然后顺便跑一跑的运动，恩，这就对了。&lt;/p&gt;
+
+&lt;h2&gt;跑步与找回自己&lt;/h2&gt;
+
+&lt;p&gt;关于为什么失恋失恋之后会迅速养成跑步的习惯。一方面，是自己的不甘，到底是被人放弃了，一想起这儿内心就不能平静，血液开始沸腾，然后开始跑。还有一点也是很重要的，&lt;strong&gt;创造一个跟自己相处的环境&lt;/strong&gt;。那时候的状态非常差，一天到晚都是一个极其寂寞的状态，根本静不下心来做事。每天都被一堆屏幕包围着，因为失恋的人状态都那样，没事干立即就会往痛处想，然后又陷入那个死循环。最好的方式是转移注意力啊，可我的注意力根本集中不起来。令人惊喜的是，跑步真是一个跟自己相处的小空间。&lt;/p&gt;
+
+&lt;p&gt;我的跑步理念是，只要是在跑，啥速度都行。于是我的跑步速度长期维持在8~10之间。这个速度是很理想的，可以听歌，可以天马行空地思考，可以静下心来想一些事儿。至于减肥啊，健康方式啊，都是跑步给我带来的副产品，当然我会觉得很幸运，特别是对一个一蹶不振的少年来说。&lt;/p&gt;
+
+&lt;p&gt;后来的故事就好讲了，生活节奏平快了，做事也专心了，自己的一些行为习惯在迅速发生改变。跑步把我带回了一个认识自己改造自己的道路上。&lt;/p&gt;
+
+&lt;h2&gt;破冰之旅&lt;/h2&gt;
+
+&lt;p&gt;对每位头马人士来讲，CC1都是个非常难忘的经历。因为你没有任何目标，完全是一匹脱缰的野马。说自己还不好说，就说最奇葩最牛逼最深刻的那些经历不就行了。CC1是了解这位讲者最初的阶段。今年我很赞同一句话：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;你认识一个人很长时间，你觉得你知道他是一个什么样的人。但事实是，你一点都不了解他。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;这句话在我听CC1的时候无数次验证过了。现如今方便的交流和密集的屏幕，让对方的各种信息变得非常地容易得到。这种社交网络带来的，大规模的，浮于表面的交流总给我们一种了解对方的错觉。其实不然，强连接越来越少，面对面越来越难，真实的交流少得可怜。可以好不夸张的说，现在人已经养成了两面性格，一个是在网络中的，一个是在真实生活中的。屏幕这边是个卖萌的妹子，屏幕那头是只抠脚大汉，此种情况比比皆是。于是乎，今年我遇到了太多的——“哇原来你是这样的呀！”&lt;/p&gt;
+
+&lt;p&gt;回归正题。那时初入头马，本人天生性格里好得瑟，站在台上肯定祭出自己最想描述的那部分。于是这个从谷底飞到完美新世界的演讲稿就这样达成了。准备了三天，排练了好多遍。那天正好是春季演讲比赛，来了很多人。后来顺利晋级，也接小区比赛的场地，认识了更多同小区的头马们。后来再见到那些伙伴们，第一句就是诶哟你就是那个爱跑步的，新标签get。CC1让我获益至此，已然无憾。&lt;/p&gt;
+
+&lt;h2&gt;一开始跑之后就停不下来&lt;/h2&gt;
+
+&lt;p&gt;希望许多美好的习惯如同跑步一样，循环往复地去影响你我的生活。&lt;/p&gt;
+</description>
+      </item>
+    
+      <item>
+        <title>Python抓取地产小区数据</title>
+        <link>http://kvenux.tk/2014/10/16/python-get-roomnum.html</link>
+        <guid isPermaLink="true">http://kvenux.tk/2014/10/16/python-get-roomnum.html</guid>
+        <pubDate>Thu, 16 Oct 2014 00:00:00 +0800</pubDate>
+        <description>&lt;p&gt;早上收到一哥们qq，想让我帮忙把&lt;a href=&quot;http://beijing.homelink.com.cn/xiaoqu/pg1/&quot;&gt;链家地产&lt;/a&gt;所有小区信息给获取到。初步感觉很麻烦，因为要解析HTML，难度略大没时间弄。&lt;/p&gt;
+
+&lt;p&gt;恰巧在吃早饭碰到一个知乎问题：&lt;a href=&quot;http://www.zhihu.com/question/20899988&quot;&gt;如何入门Python&lt;/a&gt;，第二高票的回答是一位山东大学的大牛所写，照着范例试了试，居然不到一小时搞定了。&lt;/p&gt;
+
+&lt;p&gt;本文程序参考了他写的&lt;a href=&quot;http://blog.csdn.net/pleasecallmewhy/article/details/8932310&quot;&gt;[Python]网络爬虫（八）：糗事百科的网络爬虫（v0.3）源码及解析(简化更新)&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;正则表达式 K.O. HTML解析&lt;/h2&gt;
+
+&lt;p&gt;首先把那哥们的需求抛出来：
+获取&lt;a href=&quot;http://beijing.homelink.com.cn/xiaoqu/pg1/&quot;&gt;链家地产&lt;/a&gt;页面上的所有小区的名字，位置，住户数量&lt;/p&gt;
+
+&lt;p&gt;初步分析：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;网页URL：http://beijing.homelink.com.cn/xiaoqu/pg1/ 很有规律，后面的pg1~1088即可完成遍历&lt;/li&gt;
+&lt;li&gt;网页中就有名字，位置信息&lt;/li&gt;
+&lt;li&gt;用户数量得从小区主页上找http://beijing.homelink.com.cn/xiaoqu/1111045342577/&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;第二步很好完成的原因是，&lt;a href=&quot;http://beijing.homelink.com.cn/xiaoqu/pg1/&quot;&gt;小区页面&lt;/a&gt;上查看源代码后，搜索小区名字总会有结果吧，果然惊喜地发现：&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;public indetail&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;style=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;z-index:20&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;   
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;yldt&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;javascript:void(0);&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;onClick=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;ditu(&amp;#39;39.904839&amp;#39;, &amp;#39;116.242141&amp;#39;, &amp;#39;永乐东区&amp;#39;, &amp;#39;石景山区&amp;#39;, &amp;#39;鲁谷&amp;#39;, &amp;#39;yongledongqu&amp;#39;, &amp;#39;1111027381852&amp;#39;)&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;i&amp;gt;&amp;lt;/i&amp;gt;&amp;lt;span&amp;gt;&lt;/span&gt;预览地图&lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;homeimg&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;这就很好办啦，找到中间那句就完事了。
+然后第一次用了暴力的&lt;a href=&quot;http://zh.wikipedia.org/zh-cn/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F&quot;&gt;正则表达式&lt;/a&gt;，这个&lt;a href=&quot;http://deerchao.net/tutorials/regex/regex.htm&quot;&gt;三十分钟入门网站&lt;/a&gt;不错。&lt;/p&gt;
+
+&lt;p&gt;我的理解，计算机世界处理的原材料都是信息，计算机处理中的信息的标签可以是海量\繁杂的，但必然有个特点：有规律。比如把信息写成程序，组织成网页。而正则表达式就是处理这些海量且有规律可循信息的强大工具。
+我查找这句的正则表达式是：&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;myItems&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;re&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;findall&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;&amp;lt;div class=&amp;quot;yldt&amp;quot;&amp;gt;(.*?)&amp;lt;/div&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;unicodePage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;re&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;S&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;找到开头结尾后，中间的(.*?)意思是以不是\n的字符开头，中间任意长度，结尾得是个字符的字符串。总之中间有东西就好。
+欧克，试了一下果然OK，把字符串简单处理后，前两步完成。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://kvenux.qiniudn.com/QQ%E5%9B%BE%E7%89%8720141016215612.jpg&quot; alt=&quot;此处输入图片的描述&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;第三步要点到小区的页面，再用同样的方法得到住户数目。
+又发现一个惊喜，上图中最后的那个字符串就是URL里的小区编号，比如http://beijing.homelink.com.cn/xiaoqu/1111045342577/
+那这下好办了^_^&lt;/p&gt;
+
+&lt;p&gt;程序代码：&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;c&quot;&gt;# -*- coding: utf-8 -*-&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;multiprocessing&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Pool&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;multiprocessing.dummy&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Pool&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ThreadPool&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;urllib2&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;urllib&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;re&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;thread&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;time&lt;/span&gt;
+
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;GetPage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;#myUrl = &amp;quot;http://m.qiushibaike.com/hot/page/&amp;quot; + page&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;myUrl&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;http://beijing.homelink.com.cn/xiaoqu/&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;page&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myUrl&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;user_agent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)&amp;#39;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;headers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;User-Agent&amp;#39;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;user_agent&lt;/span&gt;   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;req&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;urllib2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;myUrl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;headers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;myResponse&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;urllib2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;urlopen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;except&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39; error!&amp;#39;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;&amp;#39;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;myPage&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myResponse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;unicodePage&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myPage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;decode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;utf-8&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+  &lt;span class=&quot;c&quot;&gt;# 找出所有class=&amp;quot;yldt&amp;quot;的div标记&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;# re.S是任意匹配模式，也就是.可以匹配换行符&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;myItems&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;re&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;findall&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;&amp;lt;div class=&amp;quot;yldt&amp;quot;&amp;gt;(.*?)&amp;lt;/div&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;unicodePage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;re&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;S&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;items&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;lines&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;&amp;#39;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myItems&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;findHeader&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;onClick=&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&amp;quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ditu(&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&amp;#39;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;itemstr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;findHeader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;findHeader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&amp;#39;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&amp;quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;infolist&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;itemstr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&amp;#39;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;, &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&amp;#39;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;mapx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;infolist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;mapy&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;infolist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;infolist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;dist&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;infolist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;locaName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;infolist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;pinyin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;infolist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;snumber&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;infolist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;roomNum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;GetNum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;snumber&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;line&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;,&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mapx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;,&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mapy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;,&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;roomNum&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;except&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;&amp;#39;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;lines&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lines&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;line&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lines&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;GetNum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;myUrl&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;http://beijing.homelink.com.cn/xiaoqu/&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;page&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;/&amp;#39;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;user_agent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)&amp;#39;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;headers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;User-Agent&amp;#39;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;user_agent&lt;/span&gt;   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;req&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;urllib2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;myUrl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;headers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;fails&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fails&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;myResponse&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;urllib2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;urlopen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;timeout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;except&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;fails&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;myPage&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myResponse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;unicodePage&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myPage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;decode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;utf-8&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;&amp;lt;dd&amp;gt;房屋总数(.*?)&amp;lt;/dd&amp;gt;&amp;#39;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;usample&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;unicode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;utf8&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;myItems&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;re&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;findall&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;usample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;unicodePage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;re&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;S&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myItems&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;itemstr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;utf-8&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isdigit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;itemstr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;u&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;  ---------------------------------------&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;  程序：小区爬虫&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;  版本：0.1&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;  作者：kvenux&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;  日期：2014-10-16&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;  操作：&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;  功能：&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;  ---------------------------------------&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;  &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;output&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;/home/www/roomNum.csv&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;w&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;line&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;name,mapx,mapy,roomNum&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;line&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;urlnames&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1088&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;urlnames&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;pg&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;lines&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;GetPage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;pg&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lines&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;utf-8&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#pool=Pool(32)&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#reslist = pool.map(GetPage,urlnames)&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#pool.close()&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#pool.join()&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#for line in reslist:&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;#output.write(line)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;Done!&amp;#39;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;多线程出错了懒得调，就一个线程再那儿跑了半个多小时，我就干别的事情去了。回头看了一眼csv，画面很美。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://kvenux.qiniudn.com/QQ%E6%88%AA%E5%9B%BE20141016220637.png&quot; alt=&quot;csv&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;话说我应该看看Threads怎么写的。&lt;/p&gt;
+
+&lt;h2&gt;Python真是创造力的源泉&lt;/h2&gt;
+
+&lt;p&gt;怪不得是很受黑客欢迎的语言。有什么想法分分钟搞出来，越来越喜欢把玩python了。
+另外，得到的结果的600多K的表格，9000多条小区信息，其实还可以得到更多有规律的信息。这些程序员网站写得这么糙，不懂得隐藏商业秘密。不过，在这个时代，信息都应当是免费的。&lt;/p&gt;
+
+&lt;p&gt;好了，那么在这个程序运行之前，我要获取到某些信息智能繁琐的点点点，组织很松散。但不可否认的一点是，计算机处理过的东西，是会留下痕迹的——信息会以某种规律呈现。将它们组织之后呢，我指的是这个程序完毕后，帝都所有小区的基本信息都有了呀。拿它可以来做一些更有意思的事情。那么，问题又来了，除了小区，其实人们在信息时代抽象化了很多实体行业，产生了大量的信息，把这些信息收集起来呢？这就是大数据所谓牛逼所谓恐怖的地方吧。&lt;/p&gt;
+</description>
+      </item>
+    
+      <item>
+        <title>写下你的博客</title>
+        <link>http://kvenux.tk/2014/10/14/write-down-your-blog.html</link>
+        <guid isPermaLink="true">http://kvenux.tk/2014/10/14/write-down-your-blog.html</guid>
+        <pubDate>Tue, 14 Oct 2014 00:00:00 +0800</pubDate>
+        <description>&lt;p&gt;上周日买了台正版kindle，随后回想起多年前那台闲置的Kindle Touch. 分析一下当年（2012）为何买kindle：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;随身携带，提升逼格&lt;/li&gt;
+&lt;li&gt;上课没事干，提升逼格&lt;/li&gt;
+&lt;li&gt;数码产品，体验一把&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;拿它看书？
+唔。。。当时哪有什么书去看，是被刘刘推荐买的，于是就订阅了一堆又一堆RSS，有一些博客专栏。其实说到这里就不妨提一提，博客和书的区别。&lt;/p&gt;
+
+&lt;h2&gt;看书和看博客&lt;/h2&gt;
+
+&lt;p&gt;书的篇幅长，组织得更完善，一般作者能到写书的水平，自身已然积累了茫茫多的素材，就等着靠写书这个过程，把事实、佐证和思想落实在纸面上。
+如果把看博客比作周期短，半衰期短，收益高（相对）的事务，那么看书自然是，半衰期长，收益低了。这个标准仿照了最近很火的一个知乎答案，&lt;a href=&quot;http://www.zhihu.com/question/22238159&quot;&gt;你有什么相见恨晚的知识想推荐给年轻人？&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;关于这个问题以后还会讨论。
+总之看书很重要，看博客很有快感，写博客很有收获。说到这里，看博客跟看知乎其实很相似，把知乎理解成一个问题导向的博客发布系统？恩，重要之处在于这个系统有赞同排序。&lt;/p&gt;
+
+&lt;h2&gt;为何写博客&lt;/h2&gt;
+
+&lt;p&gt;之前一直觉得写博客就是推销自己，因为你写出去的东西始终是要找到读者的，写博客的主要目的也在于发现你的粉丝，并为他们送上精心准备的精神食粮。这是我一直不写博客的原因，因为我文笔很烂，写出来的东西没人看。&lt;/p&gt;
+
+&lt;p&gt;后来阮一峰的日志对我影响很大。他的博客页面上，大部分都是短篇，涉及政治、哲学、计算机等方面。对于读者而言，浅显易懂，不需要花太多时间，不需要很高的precondition，就能有所收获。所以他的文章，可以说是&lt;strong&gt;投入很少，收益产出比很高&lt;/strong&gt;。我想着大概也是我需要去充实博客的方向。&lt;/p&gt;
+
+&lt;p&gt;至于why blog，他的那本书中——&lt;a href=&quot;http://read.douban.com/ebook/3966114/?dcs=book-search&quot;&gt;如何变得有思想&lt;/a&gt;，把这些问题说得很明白：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;阮：说得好！写作帮助我们整理自己的思想。博客其实是一种理性思维和表达能力的训练，很多时候我们写作博客，就是在做这种训练。我写作的时候，有时会尝试不同的表达方法，看看怎么写最容易看懂、最容易被他人接受。每当有读者留言批评我的观点，我就知道了我的思维和表达在什么地方还有欠缺。Joel说过，写作能力是区分领袖和普通程序员的标志。我们不一定要当领袖，但是能够说服他人认同你的观点，这绝对是不容忽视的能力，而博客就是获取这种能力的一种卓越训练方法。
+此外，写作博客还有一个最大理由。我记得，你在网志中写过一件事，有人问：“你为什么写博客？”你反问道：“你为什么打电话？”我简直要为这个回答拍案叫绝。我们需要与些其他方式无法遇到的人。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;我导师说过，有些问题不表达出来，你是不知道你对这个问题的理解程度。但，别以为表达是一件很容易完成的事情。映射到做研究，做了就得讲出来，能讲就能用文字重新组织，而这个表达和组织的过程，便是思考问题的过程。换句话说也是我的短板——Write Down&lt;/p&gt;
+
+&lt;p&gt;之前一直想更新博客，但苦于优先级排布问题。当然更大的原因在我，9月中旬从家里回来后就没有找到一个良好的状态。
+对于更新博客的内容，之前的想法是这样的：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;技术方面，要更新自己最自信的，比如MIT 6.828，还有以前写过的编译器&lt;/li&gt;
+&lt;li&gt;篇幅方面，尽量长，从我第一篇更的&lt;a href=&quot;http://kvenux.tk/2014/09/02/how-to-bulid-your-personal-blog.html&quot;&gt;如何优雅搭建博客&lt;/a&gt;就能看出端倪，我倾向于把完整的，有组织的文字PO给大家&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;我想我应当果断调整一下：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;篇幅尽量小，简洁易懂，技术方面要用大白话来解释，大家都是程序员，看得东西都是英文文档拿过来的，讲啥黑话嘛&lt;/li&gt;
+&lt;li&gt;多写自己有关的，思考性的东西&lt;/li&gt;
+&lt;li&gt;读书，甚至于读论文的笔记都可以PO在上面&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;大致如此，即日开搞。&lt;/p&gt;
+</description>
+      </item>
+    
+      <item>
+        <title>我的笔记这样写</title>
+        <link>http://kvenux.tk/2014/10/14/my-reading-notes.html</link>
+        <guid isPermaLink="true">http://kvenux.tk/2014/10/14/my-reading-notes.html</guid>
+        <pubDate>Tue, 14 Oct 2014 00:00:00 +0800</pubDate>
+        <description>&lt;p&gt;早上看微信号上的推文，改变自己发了一篇长的：&lt;em&gt;为什么书呆子不受欢迎？&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;恰巧是这几天正在读的&lt;strong&gt;&lt;a href=&quot;http://book.douban.com/subject/6021440/&quot;&gt;黑客与画家&lt;/a&gt;&lt;/strong&gt;第一章，一字不改无任何删减。开头彭大姐只是象征性地来了几句不痛不痒，诶呀我当年也是学霸，长大了后大家都纷纷靠近我了呢。&lt;/p&gt;
+
+&lt;p&gt;在我看来，这种现象在美国非常典型，但在我分数为王的大天朝，此类现象只能说是，还好吧。书呆子虽然不那么受欢迎，但总不至于被鄙视的程度吧。作者多少有点没话找话生搬硬套的意思。&lt;/p&gt;
+
+&lt;p&gt;其实重点是，我当然不会把人家的整本书的第一章都PO在这篇文章里。干货比接近于0，为何选择你的微信号而不是去看书呢。&lt;/p&gt;
+
+&lt;p&gt;换我我会说，我给大家推荐一本书：黑客与画家。&lt;/p&gt;
+
+&lt;p&gt;把这段文字放在开头，主要是想说我记笔记的方式肯定不会这样。&lt;/p&gt;
+
+&lt;h3&gt;映射自己为主&lt;/h3&gt;
+
+&lt;p&gt;写博客的一大原因也在于此，记笔记帮助我思考。我对待读书会和看电影一样，看到内容都会映射到自己身上（当然八竿子打不到的就只当时扩充体验了），作者写书也是这样的过程，想说明什么问题，就举很多例子，表明自己的看法。我读到这部分也会相应地，去举自己的经验，记录下自己思考的结果。&lt;/p&gt;
+
+&lt;h3&gt;记下那些好玩的想法&lt;/h3&gt;
+
+&lt;p&gt;相比于平均值我更期待边界条件。新奇的东西永远我所追逐的，总不能因为它一点点坏的概率，放弃它成为惊艳的可能性。&lt;/p&gt;
+
+&lt;h3&gt;大体上捋一捋思路&lt;/h3&gt;
+
+&lt;p&gt;作者想通过几个方面来表述呢？整个事件的时间线是怎样？不希望读完之后一头雾水，慢慢读，不急。&lt;/p&gt;
+</description>
+      </item>
+    
+      <item>
+        <title>黑客与画家 第二章 黑客也是创造者</title>
+        <link>http://kvenux.tk/2014/10/14/hackers-2.html</link>
+        <guid isPermaLink="true">http://kvenux.tk/2014/10/14/hackers-2.html</guid>
+        <pubDate>Tue, 14 Oct 2014 00:00:00 +0800</pubDate>
+        <description>&lt;h2&gt;契机&lt;/h2&gt;
+
+&lt;p&gt;读这本书是因为&lt;a href=&quot;http://ruanyifeng.com/&quot;&gt;阮一峰&lt;/a&gt;，一个能称之为我偶像的人。大学期间看着他的博客长大。&lt;/p&gt;
+
+&lt;p&gt;豆瓣读书上，他的搜索结果只有两条，其中一本是笔记摘要，另一本就是黑客与画家。&lt;/p&gt;
+
+&lt;p&gt;第一印象是：这是一本讲黑客精神的书，当然我有准备，作者很可能会去维护黑客们的形象：他们不单单是那些一天到晚想着入侵、攻破一类事情的聪明人。我觉得黑客与其说他们聪明得很危险，倒不如说是好奇得很逗比（是个褒义词）。作者大概会说些历史谈点技术吧。&lt;/p&gt;
+
+&lt;p&gt;看完前言时，我的期望瞬间改变了。有点&amp;lt;大学生创业指导手册&amp;gt;的意思。&lt;/p&gt;
+
+&lt;p&gt;入正文，第二章笔记。&lt;/p&gt;
+
+&lt;h2&gt;黑客和画家的异同&lt;/h2&gt;
+
+&lt;p&gt;相同点：他们都是创造家&lt;/p&gt;
+
+&lt;p&gt;槽点：
+这里本来想说不同点的，但仔细一想，作者表达的意思又不是黑客与画家的不同点。暂且说成对计算机界吐槽吧。&lt;/p&gt;
+
+&lt;h3&gt;计算机科学这个像模像样的名称&lt;/h3&gt;
+
+&lt;p&gt;我老板常说的话，计算机哪里是什么科学，就是人类工程经验的总结。自从70年代惊艳爆发以后，计算机发展之路一直是以经验纠正为主。&lt;/p&gt;
+
+&lt;p&gt;比如，计算机体系结构：&lt;/p&gt;
+
+&lt;p&gt;60 70s：为了充分利用晶体管，大伙全扑倒了指令集并行上，好处很显而易见啊，干十个人的工作，只收五份工资&lt;/p&gt;
+
+&lt;p&gt;80s 90s：存储墙问题出现，简言之，CPU太快内存太慢，CPU存取数据像面对着一堵墙。这时候重点是针对存储器的优化，人们经验上的改变是——编译器要和指令集一起开发了&lt;/p&gt;
+
+&lt;p&gt;2000-：半导体撑到极限，摩尔定律终结，多核异构又成为标签&lt;/p&gt;
+
+&lt;p&gt;诶呀这个例子一举。扯远了&lt;/p&gt;
+
+&lt;h3&gt;考核指标&lt;/h3&gt;
+
+&lt;p&gt;计算机博士好考核，毕业你得发一篇SCI，两篇EI，SCI影响因子要大于0.5才可以避免盲审，一篇SCI可以顶两篇EI，CCF推荐的A类会可以抵一篇SCI，两篇B类会抵一篇SCI，如果没有SCI理论上也能毕业，但面临的盲审问题一旦过不了就只能延期。是的我倒背如流。&lt;/p&gt;
+
+&lt;p&gt;但黑客的工作不好考核。时间？设计美感？影响力？&lt;/p&gt;
+
+&lt;h2&gt;理论不是那么重要&lt;/h2&gt;
+
+&lt;p&gt;对于一个画家而言，我想他的整个成长过程大部分时间都在作画，而不是翻那些理论书，或者考那些无所谓的证书。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;黑客搞懂“计算理论”的必要性，与画家搞懂颜料化学成分的必要性差别不大。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;这个例子太妙，点个赞。因为我的计算导论一类的课程学得一团糟，终于有大牛出来替我松口气了。&lt;/p&gt;
+
+&lt;p&gt;颜料成分那些东西，记住点就行了。写程序嘛，知道时间\空间复杂度，再学点状态机就够了。
+直接上手，不需要投入太多纸上谈兵的时间。把整个程序考虑清楚的时间点，应该是编写代码的同时。&lt;/p&gt;
+
+&lt;h2&gt;自由度&lt;/h2&gt;
+
+&lt;p&gt;画家使用工具应该是优雅的，随意的。这里又有一句精妙的比喻&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;我认识的黑客，没有一个人喜欢用静态类型语言编程。我们需要的是一种可以随意涂抹、擦擦改改的语言，我们不想正襟危坐，把一个盛满各种变量类型的茶杯，小心翼翼地放在自己的膝盖上，为了与一丝不苟的编译器大婶（没打错，肯定是故意的）交谈，努力地选词语，确保变量类型匹配，好让自己显得礼貌又周到。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;前段时间都在写python，某天突然心血来潮用C解决某个编程竞赛的list，奥哟各种错误不堪入目啊。静态类型确实很烦人，谢谢你大神，又替我说话了。&lt;/p&gt;
+
+&lt;p&gt;话说回来，编程语言作为一项工具，顺手应当放在首位。俺们都是热爱自由的人，放那么多条条框框，何必呢。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;静态类型是某些计算机语言的一个特性,指编译时对变量类型进行严格检查,典型代表是C\C++\Java。这类语言中，声明变量的时候必须指定类型，而且以后不能再改变。这必然意味着，只有在你对整个程序和细节思考成熟以后，才能编写代码。与之对应的是动态类型语言，变量包含的数据类型可以随时改变，比如python。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2&gt;纸面上的快感&lt;/h2&gt;
+
+&lt;p&gt;如何提升论文的逼格？堆公式啊！&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;一页写满了数学公式的纸真是令人印象深刻啊。（小窍门：用希腊字母表示变量名会令人印象更深刻。）&lt;strong&gt;因此你就收到巨大的诱惑，去解决哪些能够用数据公式处理的问题，而不是去解决真正重要的问题。&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;这句话醍醐灌顶。这也是高中本科过渡到工程实际面临的最重要问题。以前一直觉得万事万物，必然存在其本征联系。后来解空间大了，碰见几个&lt;a href=&quot;http://zh.wikipedia.org/zh-cn/NP%E5%9B%B0%E9%9A%BE&quot;&gt;NP难&lt;/a&gt;问题就觉得只是个瑕疵而已，追求完美之心一直存在。总抱有的一种幻想是，找出这个问题那个本征公式，必然能通过公式推导出更多问题的解。现在我只想说，少年想多了！&lt;/p&gt;
+
+&lt;h2&gt;要止损还是更高的收益&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;如果某一天你想要去赚大钱，那么记住上面这一点，因为这是创业公司能够成功的原因之一。大公司为了避免设计上的灾难，选择了减少设计结果的标准差。但是当你排斥差异的时候，你不仅将失败的可能性排除在外，也将获得高利润的可能性排除在外。这对大公司来说不是问题，因为生产特别优秀的产品不是它们的获胜手段。大公司只要做到不太烂，就能赢。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;之前对量化投资感兴趣，多方咨询，得出的看法是，量化投资资金量大，只要存在可能的潜在收益，并且保底可能性大，就进行交易。大公司很想量化投资，只要不太烂，就能收益可观。但股神传奇可不是以减少标准差为策略起家的。&lt;/p&gt;
+
+&lt;p&gt;相比于遵循规则追求完美，适当的冒险，虽然承担了更大的失败几率，但却保住的更多收益的可能性。而且去那些新兴领域，遇到的阻力几乎为零。只要敢于提出大胆的设计，合理分工，就能在这里战胜大公司。&lt;/p&gt;
+
+&lt;h2&gt;黑客的工作状态&lt;/h2&gt;
+
+&lt;p&gt;创作者几乎都有个“白天工作”，只有在空闲时间里才真正进行自我的创作。对于一个程序员而言，业余时间做出来的东西，侧面反映了他对这个行业的热爱。&lt;/p&gt;
+
+&lt;p&gt;科学家搞研究的途径，往往是通过实验和解题来学习，他们不会通过干活来学习。&lt;/p&gt;
+
+&lt;p&gt;科学家研究的基础是现有的，完美的成果。就是那个大圆，在圆上凿出一个凸点。&lt;/p&gt;
+
+&lt;p&gt;而黑客创造性的工作在于，其工作的原创性。一开始可能就是一个点，没有其他人完美的结果可以依赖。&lt;/p&gt;
+
+&lt;h2&gt;学习编程&lt;/h2&gt;
+
+&lt;p&gt;大学里学习编程，印象深刻。几个老师在台上照着本参考书，言之无物，还有万年不换背景的PPT。&lt;/p&gt;
+
+&lt;p&gt;其实我和作者的观点很类似，学习编程，要问题驱动，从范例入手。&lt;/p&gt;
+
+&lt;p&gt;还是以绘画为例：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;一幅画是逐步完成的。通常一开始是一张草图，然后再逐步填入细节。但是，它又不单纯是一个填入细节的过程。有时，原先的构想看来是错的，你就必须动手修改。无数古代油画放在 X 光下检视，就能看出修改痕迹，四肢的位置被移动过，或者脸部的表情经过了调整。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;而且当今开源社区这么红火，github上又有大量的开源项目，程序员简直是最具有分享精神和学习精神的职业了。这样的大背景下还不去借鉴别人，帮助别人，就有点太说不过去了。&lt;/p&gt;
+
+&lt;p&gt;作者最后还说，避免过早优化。我的观点是，再一件事情没有从0变为1之前，思考10,100,1000是没有意义的。不要太早优化，不要太早决定意见事情该如何做。&lt;/p&gt;
+
+&lt;h2&gt;小结&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;自由，摆脱束缚&lt;/li&gt;
+&lt;li&gt;看清本质，不拘泥于华丽的外表&lt;/li&gt;
+&lt;li&gt;冒险，拒绝平庸&lt;/li&gt;
+&lt;li&gt;谁说业余爱好就不是主业&lt;/li&gt;
+&lt;li&gt;循序渐进&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+      </item>
+    
+      <item>
+        <title>如何优雅地搭建博客</title>
+        <link>http://kvenux.tk/2014/09/02/how-to-bulid-your-personal-blog.html</link>
+        <guid isPermaLink="true">http://kvenux.tk/2014/09/02/how-to-bulid-your-personal-blog.html</guid>
+        <pubDate>Tue, 02 Sep 2014 00:00:00 +0800</pubDate>
+        <description>&lt;h2&gt;个人博客之路&lt;/h2&gt;
+
+&lt;p&gt;开篇先引&lt;a href=&quot;http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html&quot;&gt;阮一峰&lt;/a&gt;一句话，Blogger的三大阶段&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;第一阶段，刚接触Blog，觉得很新鲜，试着选择一个免费空间来写。&lt;/p&gt;
+
+&lt;p&gt;第二阶段，发现免费空间限制太多，就自己购买域名和空间，搭建独立博客。&lt;/p&gt;
+
+&lt;p&gt;第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;几多年前我也写过博客，像是新浪博客百度空间一类的，各种杀马特的主题，再加以固定的模式和烦人的广告，感觉十分不爽。近来在GitHub上搭建博客已经成为了一种潮流。一方面GitHub提供托管，方便实施；另一方面，自己对博客的整个流程具有绝对的掌控。今天把流程放在个人博客上，希望对大家有所帮助。&lt;/p&gt;
+
+&lt;h2&gt;Wordpress + SAE&lt;/h2&gt;
+
+&lt;p&gt;大名鼎鼎的&lt;a href=&quot;http://cn.wordpress.org/&quot;&gt;WordPress&lt;/a&gt;就不用介绍了，官网上说它：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;在性能上易于操作、易于浏览；在外观上优雅大方、风格清新、色彩诱人。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;实际用了一下，大致如此。在SAE上的布置也是很简洁愉快的，下面单步说明。&lt;/p&gt;
+
+&lt;p&gt;前置条件：&lt;a href=&quot;http://sae.sina.com.cn/&quot;&gt;SAE&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;App Engine是在云计算时代衍生出的云平台，是部署在数据中心上的虚拟化服务，相比于传统的物理服务器，其优势很明显：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;不用担心硬件维护：容错，冗余，服务器运维这些都是云平台提供商干的，开发者不必involve&lt;/li&gt;
+&lt;li&gt;可扩展性强：为虚拟机分配的存储空间网络带宽等可以动态增加，这对于快速成长的web应用来说，免去了用户激增时需要更换服务器的尴尬&lt;/li&gt;
+&lt;li&gt;更安全：云平台有自身的安全措施&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;总的来说，云平台高大上。本来也想用&lt;a href=&quot;http://appengine.google.com/&quot;&gt;GAE&lt;/a&gt;，但由于众所周知的GFW，想想就算连着也不会流畅，还是放弃了。打个广告：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://cloud.google.com/developers/starterpack/&quot;&gt;Google Cloud Platform 新手包&lt;/a&gt;，注册即送500$&lt;/p&gt;
+
+&lt;p&gt;提供虚拟机的SSH，自己电脑能顺利连上的话，做个workplace还是不错的&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://sae.sina.com.cn/&quot;&gt;SAE&lt;/a&gt;优势在于国内，中文。注册都不用，绑定新浪账号就行。&lt;/p&gt;
+
+&lt;p&gt;搭建WordPress直接用&lt;a href=&quot;http://sae.sina.com.cn/&quot;&gt;SAE&lt;/a&gt;自己的&lt;a href=&quot;http://sae.sina.com.cn/?m=appstore&quot;&gt;应用仓库&lt;/a&gt;就好。
+记得把MySQL，memCache服务都初始化一下。
+搭建完成，点到刚刚建好的云应用地址，设置管理员账号密码。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://kvenux.qiniudn.com/2014090301.png&quot; alt=&quot;Alt text&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;确实很简洁，符合我的预期。插件支持良好，SAE也很有亲和力。但唯一让我不爽的还是所见即所得的编辑模式。因为在这种模式下，做不到writing without mouse，老拿鼠标排版算是个什么玩意。我要Markdown！&lt;/p&gt;
+
+&lt;p&gt;于是我开始了在WordPress上寻找Markdown的解决方案，找到了好几个第三方的插件，但都支持不良好。唯一可行的途径是，StackEdit上编辑要先导出html，再用插件发布到WordPress，格式不佳还需要调整。&lt;/p&gt;
+
+&lt;p&gt;总之WordPress内化了自己的排版方式，全过程就像是用Markdown生成个WORD一样。感觉十分极其别扭，换！&lt;/p&gt;
+
+&lt;p&gt;不过我给俱乐部搭了一个博客，WordPress对于html良好的兼容让ctrl c/v十分顺滑，welcome letter直接复制粘贴，格式完美，点个赞~&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;欢迎访问&lt;a href=&quot;http://www.beihangtmc.tk/&quot;&gt;北航Toastmaster&lt;/a&gt;！&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2&gt;Jekyll + GitHub + Markdown&lt;/h2&gt;
+
+&lt;p&gt;终于到今天主题了，以上三位兄弟强强联合，才叫优雅！&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;: 一个轻量级，静态化的博客发布系统，有&lt;a href=&quot;http://jekyllrb.cn/&quot;&gt;中文网站&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/&quot;&gt;GitHub&lt;/a&gt;: 红得发紫的分布式版本管理系统，有着&lt;strong&gt;程序员的Facebook&lt;/strong&gt;的美誉&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://help.github.com/articles/markdown-basics&quot;&gt;Markdown&lt;/a&gt;：轻量级标记语言，让用户协作&lt;strong&gt;专注于内容而不是排版&lt;/strong&gt;，即是我推崇的&lt;strong&gt;writing without mouse&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3&gt;为何优雅&lt;/h3&gt;
+
+&lt;p&gt;Jekyll一大特点是模块化，用户的模板，博客页面的设置都形成了各自的模块。发布博客时，只需要关心发布的内容即可。&lt;/p&gt;
+
+&lt;p&gt;Markdown的特点也是关注内容，排版只需要简单的标记，摆脱了一边用键盘写，一边用鼠标&lt;strong&gt;聚焦光标&lt;/strong&gt;+&lt;strong&gt;排版&lt;/strong&gt;的尴尬，类比VIM 和 Visual Studio的区别。&lt;/p&gt;
+
+&lt;p&gt;Git的介入，把个人博看看成一个项目，用户也可以checkout各种分支，多弄几个版本之间来回切换，当然不嫌折腾的话。虽然有点杀鸡用牛刀的意思，毕竟博客不同于代码，不用覆写不用调试，但这种新(dou)奇(bi)的思路还是值得鼓励哒！Anyway, 用Github可以大大提升逼格，因为像我这样的代码渣Github上连个仓库都木有╮(╯▽╰)╭&lt;/p&gt;
+
+&lt;h3&gt;Markdown编辑器推荐&lt;/h3&gt;
+
+&lt;p&gt;常用的两款编辑器：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;http://maxiang.info/&quot;&gt;马克飞象&lt;/a&gt;: 外观漂亮，主题样式较多，代码高亮仿VIM深得我心，服务器在国内速度快，及时更新，和印象笔记连接可以同步过去。插入图片方便，截图复制就好。目前大部分文档都在这个上面写&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://stackedit.io/&quot;&gt;StackEdit&lt;/a&gt;: 功能强大，有各种小icon可以用，非常地小清新。提供Dropbox和Google Drive的自动同步，支持HTML转换成Markdown。及时性有点弱，毕竟服务器在国外。偶尔用用&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3&gt;Step 1 Jekyll在本地搭建&lt;/h3&gt;
+
+&lt;p&gt;Jekyll的作用简而言之，就是把本地写好的Markdown文件，按设置好的模板转换成HTML，并能开个服务挂在到Localhost上去。&lt;/p&gt;
+
+&lt;p&gt;1.安装Jekyll&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;gem install jekyll&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;ubuntu下可能会出现ruby库太老的情况，需要卸载了重新装，参考&lt;a href=&quot;http://zuyunfei.com/2013/04/01/install-ruby-on-ubuntu/&quot;&gt;在ubuntu 12.04 上安装ruby&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2.速度搞起&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;jekyll new my-fisrt-site
+&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;my-first-site
+jekyll serve&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;3.去http://localhost:4000看看&lt;/p&gt;
+
+&lt;p&gt;好的你第一个博客就这么搭建好了，就这么简单。&lt;/p&gt;
+
+&lt;p&gt;下面我们来熟悉一下目录结构&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;.
+├── about.md            &lt;span class=&quot;c&quot;&gt;#关于页面&lt;/span&gt;
+├── _config.yml         &lt;span class=&quot;c&quot;&gt;#全局设置&lt;/span&gt;
+├── css                 &lt;span class=&quot;c&quot;&gt;#样式集合&lt;/span&gt;
+│   └── main.scss
+├── feed.xml            &lt;span class=&quot;c&quot;&gt;#RSS订阅&lt;/span&gt;
+├── _includes           &lt;span class=&quot;c&quot;&gt;#常用页面库&lt;/span&gt;
+│   ├── footer.html
+│   ├── header.html
+│   └── head.html
+├── index.html          &lt;span class=&quot;c&quot;&gt;#主页&lt;/span&gt;
+├── _layouts            &lt;span class=&quot;c&quot;&gt;#常用模板&lt;/span&gt;
+│   ├── default.html
+│   ├── page.html
+│   └── post.html
+├── _posts              &lt;span class=&quot;c&quot;&gt;#发表的博客在这里&lt;/span&gt;
+│   └── 2014-09-03-welcome-to-jekyll.markdown
+└── _sass               &lt;span class=&quot;c&quot;&gt;#还是样式&lt;/span&gt;
+    ├── _base.scss
+    ├── _layout.scss
+    └── _syntax-highlighting.scss&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Jekyll处理完毕后会生成_site的目录，这个目录下的文件就是你的静态页面了。&lt;/p&gt;
+
+&lt;h3&gt;Step 2 fork别人的仓库&lt;/h3&gt;
+
+&lt;p&gt;为满足diversity的需求，通常每位Blogger都要换N多主体。开始我们的换主题之旅吧。&lt;/p&gt;
+
+&lt;p&gt;首先在Jekyll的&lt;a href=&quot;https://github.com/jekyll/jekyll/wiki/Sites&quot;&gt;WIKI页面&lt;/a&gt;上可以找到茫茫多的主题。其中不少是中文的，按自己喜好，每个博客都附有git仓库地址，去fork他们的库就好。&lt;/p&gt;
+
+&lt;p&gt;这里说说fork和clone的区别。fork就像linux那个经典的系统调用一样，完完全全地把仓库给照搬过来。起先乍一看，fork和clone不一个意思么，一度被搞得很晕。参考StackOverflow上的一个回答：&lt;a href=&quot;http://stackoverflow.com/questions/6286571/git-fork-is-git-clone&quot;&gt;Git fork is git clone?&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;区别在于贡献给原作者的方式:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;如果你已经是项目的contributor，你可以clone原仓库，并贡献自己的修改；&lt;/li&gt;
+&lt;li&gt;如果你不是，你可以fork，但fork出来的项目是不能push到原仓库的，需要经过pull request，原作者会收到一封邮件同不同意你的修改。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;关于这些区别以后再讨论吧。clone别人的仓库也有两种方式：&lt;/p&gt;
+
+&lt;p&gt;1.简单粗暴型——在自己仓库的文件夹里把别人的拷过来
+首先把自己的项目拷过来，然后把不想要的文件都git delete掉，没错就是这么暴力！
+然后我们去clone别人的东东，然后拷过来，再add commit push，大功告成&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;git clone https://github.com/poole/lanyon &lt;span class=&quot;c&quot;&gt;#clone下来可以先jekyll serve一下本地看看&lt;/span&gt;
+cp -rf ./* ../your-repo-name/
+&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ../your-repo-name
+git add *
+git commit -m &lt;span class=&quot;s2&quot;&gt;&amp;quot;anything&amp;quot;&lt;/span&gt;
+git push origin master&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;2.优雅型——clone别人的仓库，镜像改成自己的&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;git clone https://github.com/poole/lanyon
+&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;lanyon
+git push --mirror your-repo-address
+&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ..
+rm -rf lanyon
+git clone your-repo-address&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;好像也有点晕。没事就是把别人的clone下来，然后镜像推到自己的仓库，再把本地别人的给删了，再把自己的clone回来。&lt;/p&gt;
+
+&lt;h3&gt;Step 3 发布到GitCafe&lt;/h3&gt;
+
+&lt;p&gt;起先为了逼格起见是想用GitHub来着，可读到文档说，把本地文章提交到GitHub服务器上，大约经过10分钟就可以访问了。。。呵呵&lt;/p&gt;
+
+&lt;p&gt;而且GitHub服务器毕竟在国外，心理延迟总觉得很长，要是改天再遇到个刷票门事件。。。呵呵&lt;/p&gt;
+
+&lt;p&gt;于是换中国特色的GitHub吧，找了找果然有，&lt;a href=&quot;https://gitcafe.com/&quot;&gt;GitCafe&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;跟着这个&lt;a href=&quot;https://gitcafe.com/GitCafe/Help/wiki/Pages-%E7%9B%B8%E5%85%B3%E5%B8%AE%E5%8A%A9#wiki&quot;&gt;WIKI&lt;/a&gt;建立一个Pages吧，这里需要说明一下，GitPages是一个特殊的git项目，相当于把本地Jekyll好的静态页面托管给了gitcafe，可以通过XXX.gitcafe.com访问到你的页面。一个账户就一个页面哦，因为项目名和你用户名同名。其实就是GitHub想给每个用户给一个免费的个人空间啦~&lt;/p&gt;
+
+&lt;h3&gt;Step 4 绑定个人域名&lt;/h3&gt;
+
+&lt;p&gt;免费域名推荐&lt;a href=&quot;http://www.dot.tk/zh/index.html?lang=zh&quot;&gt;.tk&lt;/a&gt;，因为免费，注册申请吧。
+绑定也很简单，绑定的时候看&lt;a href=&quot;https://gitcafe.com/GitCafe/Help/wiki/Pages-%E7%9B%B8%E5%85%B3%E5%B8%AE%E5%8A%A9#wiki&quot;&gt;WIKI&lt;/a&gt;页面就好。&lt;/p&gt;
+
+&lt;h3&gt;Step 5 改成自己的&lt;/h3&gt;
+
+&lt;p&gt;修改一下文件：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;_config.yml: 博客的全局设置，包括Markdown解析器，Jekyll插件等，一般好的模板会把站点信息和作者信息当成变量写在这里，变量修改成自己即可&lt;/li&gt;
+&lt;li&gt;README.md: 这是个人主页的项目文档，可以放点项目说明，如fork自xxx，修改了xxx&lt;/li&gt;
+&lt;li&gt;about.md: 个人简介，放上自己吧&lt;/li&gt;
+&lt;li&gt;_layout: 这个文件夹下修改一下配色字体啥的，没有css基础的就省省吧。比如我，改了半天，越改越难看。真是后悔以前闲的蛋疼时不看看网页前端，现在一到美化就傻眼&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3&gt;Step 6 添加评论&lt;/h3&gt;
+
+&lt;p&gt;起初我会觉得这个事情很复杂，因为是在为一个静态页面添加一个动态的评论工具。看到教程傻眼了，原来这么easy，就是引用一段js代码，突然理解了抢票门事件。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;去Disqus上注册账号&lt;/li&gt;
+&lt;li&gt;拿到你的代码段&lt;/li&gt;
+&lt;li&gt;添加到_layout下的post.html模板的最下面中&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3&gt;Step 7 图片外链&lt;/h3&gt;
+
+&lt;p&gt;起初的打算是，要不放git页面上吧，直接引用本地文件得了。但联想到管理图片还要建一堆文件夹，更何况以后万一我的.md被人各种copy，图片丢了岂不很丢人。&lt;/p&gt;
+
+&lt;p&gt;本来想用谷歌+的，由于众所周知的原因放弃了。找个中国特色的吧&lt;/p&gt;
+
+&lt;p&gt;果然还是有啊，&lt;a href=&quot;https://portal.qiniu.com/signup?code=3lhfs2uob6jbm&quot;&gt;七牛云存储&lt;/a&gt;，体验很赞的说！
+注册登录建立自己的库，加图片就好，每个图片都有外链的，而且访问速度超快！&lt;/p&gt;
+
+&lt;h3&gt;Step 8 开始愉快地写博客吧&lt;/h3&gt;
+
+&lt;p&gt;步骤如下：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;本地用Markdown编辑器写好.md，导出成2014-09-01-xxxx.md存在_posts/下，日期命名是为了方便Jekyll识别日期&lt;/li&gt;
+&lt;li&gt;本地用Jekyll serve --watch看看结果，加watch选项可以实时更新，微调一下格式&lt;/li&gt;
+&lt;li&gt;没问题后，push到GitCafe上去&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3&gt;代码高亮&lt;/h3&gt;
+
+&lt;p&gt;Jekyll自带高亮工具Pygments，在_config.yml中设置启用&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;pygments：          &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Pygments是用python写的代码高亮样式的生成工具，安装：&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;easy_install pygments&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;通过下面的命令可以查看当前支持的样式：&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;&amp;gt;&amp;gt;&amp;gt; from pygments.styles import STYLE_MAP
+&amp;gt;&amp;gt;&amp;gt; STYLE_MAP.keys&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;monokai&amp;#39;&lt;/span&gt;, &lt;span class=&quot;s1&quot;&gt;&amp;#39;manni&amp;#39;&lt;/span&gt;, &lt;span class=&quot;s1&quot;&gt;&amp;#39;rrt&amp;#39;&lt;/span&gt;, &lt;span class=&quot;s1&quot;&gt;&amp;#39;perldoc&amp;#39;&lt;/span&gt;, &lt;span class=&quot;s1&quot;&gt;&amp;#39;borland&amp;#39;&lt;/span&gt;, &lt;span class=&quot;s1&quot;&gt;&amp;#39;colorful&amp;#39;&lt;/span&gt;, &lt;span class=&quot;s1&quot;&gt;&amp;#39;default&amp;#39;&lt;/span&gt;, &lt;span class=&quot;s1&quot;&gt;&amp;#39;murphy&amp;#39;&lt;/span&gt;, &lt;span class=&quot;s1&quot;&gt;&amp;#39;vs&amp;#39;&lt;/span&gt;, &lt;span class=&quot;s1&quot;&gt;&amp;#39;trac&amp;#39;&lt;/span&gt;, &lt;span class=&quot;s1&quot;&gt;&amp;#39;tango&amp;#39;&lt;/span&gt;, &lt;span class=&quot;s1&quot;&gt;&amp;#39;fruity&amp;#39;&lt;/span&gt;, &lt;span class=&quot;s1&quot;&gt;&amp;#39;autumn&amp;#39;&lt;/span&gt;, &lt;span class=&quot;s1&quot;&gt;&amp;#39;bw&amp;#39;&lt;/span&gt;, &lt;span class=&quot;s1&quot;&gt;&amp;#39;emacs&amp;#39;&lt;/span&gt;, &lt;span class=&quot;s1&quot;&gt;&amp;#39;vim&amp;#39;&lt;/span&gt;, &lt;span class=&quot;s1&quot;&gt;&amp;#39;pastie&amp;#39;&lt;/span&gt;, &lt;span class=&quot;s1&quot;&gt;&amp;#39;friendly&amp;#39;&lt;/span&gt;, &lt;span class=&quot;s1&quot;&gt;&amp;#39;native&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;选择一种样式，放在你的css目录下&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;pygmentize -S native -f html &amp;gt; pygments.css&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;“native”是样式名，“html”是formatter，css是生成的代码高亮样式。&lt;/p&gt;
+
+&lt;p&gt;写文章时，用如下格式来代码高亮：&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;highlight&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pre&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;code&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;language-python&amp;quot;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lang&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;python&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;span&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;o&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;//&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;span&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;span&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;n&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;span&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;span&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;n&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;here&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;span&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pre&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;那些小清新的小图标&lt;/h3&gt;
+
+&lt;p&gt;走过路过发现一枚插件，可以把小图标放上去，终于明白StackEdit里那些图标是怎么来的了。
+来源于Bootstrap旗下的font-awesome。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.bootcss.com/&quot;&gt;Bootstrap&lt;/a&gt; 是Twitter推出的一个用于前端开发的开源工具包，简洁、直观、强悍的前端开发框架，让web开发更迅速、简单&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://fortawesome.github.io/Font-Awesome/&quot;&gt;Font Awesome&lt;/a&gt; 是一套完美的图标字体，主要目的是和Bootstrap 搭配使用&lt;/p&gt;
+
+&lt;p&gt;原谅我是个CSS渣，才知道这帮人是用的bootstrap生成的样式。&lt;/p&gt;
+
+&lt;p&gt;添加Font Awesome：将font_awesome.rb放到 _plugins/下即可。这样用：&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;&lt;span class=&quot;c&quot;&gt;#\{\% icon fa-user fa-lg \%\}&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;这里本来要放一堆漂亮的小图标的，奈何GitCafe上Jekyll 版本2.2.0不知道font-awesome的插件，本地生成是没问题的，以后有空再调试吧。&lt;/p&gt;
+
+&lt;p&gt;GitCafe个人主页的出错信息会email给用户，之前一直不知道在哪里看。&lt;/p&gt;
+
+&lt;h3&gt;总结&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;作为一个CSS渣我不应该和它过不去，样子不好就凑活用吧&lt;/li&gt;
+&lt;li&gt;其实回过头来看这些过程都很简单，学习曲线也不陡，哎就是懒啊&lt;/li&gt;
+&lt;li&gt;我爱Markdown&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+      </item>
+    
+  </channel>
+</rss>

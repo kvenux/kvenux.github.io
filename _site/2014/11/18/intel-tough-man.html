@@ -1,0 +1,561 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+<title>浪潮之巅——Intel和他的x86 | Keven's Blog</title>
+<meta name="author" content="Keven">
+
+  
+    <link rel="shortcut icon" href="http://kvenux.qiniudn.com/lion.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/bootstrap.css">
+    <link rel="stylesheet" href="/public/css/font-awesome.css">
+    <link rel="stylesheet" href="/public/js/prettify/prettify.css">
+    <link rel="stylesheet" href="/public/css/base.css">
+    <link href="/pages/atom.xml" rel="alternate" title="Keven's Blog" type="application/atom+xml">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 aside visible-md visible-lg">
+  <div class="row">
+    <div class="col-md-3 col-xs-3 aside1">
+      <br>
+      <a class="pjaxlink" href="/"><img src="http://kvenux.qiniudn.com/lion.png" class="img-circle avatar"></a>
+      <br><br>
+      <ul class="nav nav-pills nav-stacked">
+        
+          <li><a href="#技术" data-toggle="tab">技术</a></li>
+        
+          <li><a href="#笔记" data-toggle="tab">笔记</a></li>
+        
+          <li><a href="#观点" data-toggle="tab">观点</a></li>
+        
+          <li><a href="#toastmaster" data-toggle="tab">toastmaster</a></li>
+        
+        <li><a href="#tags" data-toggle="tab">TAGS</a></li>
+        <li><a class="pjaxlink" href="/pages/archive.html">归档</a></li>
+        <li><a class="pjaxlink" href="/pages/about.html">关于</a></li>
+      </ul>
+      <div class="aside1_bottom">
+        <table class="table table-condensed">
+          <tr>
+            <td><a href="/pages/atom.xml" target="_blank"><i class="fa fa-rss fa-2x"></i></a></td>
+            <td><a href="mailto:buaasjw@gmail.com"><i class="fa fa-envelope-o fa-2x"></i></a></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="col-md-9 col-xs-9 aside2">
+      <div class="row">
+        <div class="tab-content">
+           
+            <div class="tab-pane" id="技术">
+              <div class="list-group">
+                <h2 class="center">技术</h2>
+                
+                  <a href="/2014/11/27/transfrom-studio-to-eclipse.html" class="list-group-item pjaxlink">将Android Studio工程转换到Eclipse下</a>
+                
+                  <a href="/2014/11/23/js-sendwechat.html" class="list-group-item pjaxlink">利用js定时发送微信</a>
+                
+                  <a href="/2014/11/17/nodejs-webot.html" class="list-group-item pjaxlink">利用nodejs搭建微信机器人</a>
+                
+                  <a href="/2014/10/16/python-get-roomnum.html" class="list-group-item pjaxlink">Python抓取地产小区数据</a>
+                
+                  <a href="/2014/09/02/how-to-bulid-your-personal-blog.html" class="list-group-item pjaxlink">如何优雅地搭建博客</a>
+                
+              </div>
+            </div>
+           
+            <div class="tab-pane" id="笔记">
+              <div class="list-group">
+                <h2 class="center">笔记</h2>
+                
+                  <a href="/2014/11/18/intel-tough-man.html" class="list-group-item pjaxlink">浪潮之巅——Intel和他的x86</a>
+                
+                  <a href="/2014/10/14/my-reading-notes.html" class="list-group-item pjaxlink">我的笔记这样写</a>
+                
+                  <a href="/2014/10/14/hackers-2.html" class="list-group-item pjaxlink">黑客与画家 第二章 黑客也是创造者</a>
+                
+              </div>
+            </div>
+           
+            <div class="tab-pane" id="观点">
+              <div class="list-group">
+                <h2 class="center">观点</h2>
+                
+                  <a href="/2014/10/14/write-down-your-blog.html" class="list-group-item pjaxlink">写下你的博客</a>
+                
+              </div>
+            </div>
+           
+            <div class="tab-pane" id="toastmaster">
+              <div class="list-group">
+                <h2 class="center">toastmaster</h2>
+                
+                  <a href="/2014/11/10/CC1-run-for-your-life.html" class="list-group-item pjaxlink">CC1 IceBreaker---Run for Your Life</a>
+                
+              </div>
+            </div>
+          
+          <div class="tab-pane" id="tags">
+            <div class="panel-group" id="accordion">
+              <h2 class="center">TAGS</h2>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#Blog">Blog</a>
+                      <span class="badge pull-right">2</span>
+                    </h4>
+                  </div>
+                  <div id="Blog" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/10/14/write-down-your-blog.html' class="list-group-item pjaxlink">
+                        写下你的博客
+                      </a>
+                    
+                      <a  href='/2014/09/02/how-to-bulid-your-personal-blog.html' class="list-group-item pjaxlink">
+                        如何优雅地搭建博客
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#Jekyll">Jekyll</a>
+                      <span class="badge pull-right">1</span>
+                    </h4>
+                  </div>
+                  <div id="Jekyll" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/09/02/how-to-bulid-your-personal-blog.html' class="list-group-item pjaxlink">
+                        如何优雅地搭建博客
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#GitHub">GitHub</a>
+                      <span class="badge pull-right">1</span>
+                    </h4>
+                  </div>
+                  <div id="GitHub" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/09/02/how-to-bulid-your-personal-blog.html' class="list-group-item pjaxlink">
+                        如何优雅地搭建博客
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#GitCafe">GitCafe</a>
+                      <span class="badge pull-right">1</span>
+                    </h4>
+                  </div>
+                  <div id="GitCafe" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/09/02/how-to-bulid-your-personal-blog.html' class="list-group-item pjaxlink">
+                        如何优雅地搭建博客
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#Markdown">Markdown</a>
+                      <span class="badge pull-right">1</span>
+                    </h4>
+                  </div>
+                  <div id="Markdown" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/09/02/how-to-bulid-your-personal-blog.html' class="list-group-item pjaxlink">
+                        如何优雅地搭建博客
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#SAE">SAE</a>
+                      <span class="badge pull-right">1</span>
+                    </h4>
+                  </div>
+                  <div id="SAE" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/09/02/how-to-bulid-your-personal-blog.html' class="list-group-item pjaxlink">
+                        如何优雅地搭建博客
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#WordPress">WordPress</a>
+                      <span class="badge pull-right">1</span>
+                    </h4>
+                  </div>
+                  <div id="WordPress" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/09/02/how-to-bulid-your-personal-blog.html' class="list-group-item pjaxlink">
+                        如何优雅地搭建博客
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#Artist">Artist</a>
+                      <span class="badge pull-right">1</span>
+                    </h4>
+                  </div>
+                  <div id="Artist" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/10/14/hackers-2.html' class="list-group-item pjaxlink">
+                        黑客与画家 第二章 黑客也是创造者
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#ReadingNotes">ReadingNotes</a>
+                      <span class="badge pull-right">1</span>
+                    </h4>
+                  </div>
+                  <div id="ReadingNotes" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/10/14/my-reading-notes.html' class="list-group-item pjaxlink">
+                        我的笔记这样写
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#Thinking">Thinking</a>
+                      <span class="badge pull-right">1</span>
+                    </h4>
+                  </div>
+                  <div id="Thinking" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/10/14/write-down-your-blog.html' class="list-group-item pjaxlink">
+                        写下你的博客
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#Python">Python</a>
+                      <span class="badge pull-right">1</span>
+                    </h4>
+                  </div>
+                  <div id="Python" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/10/16/python-get-roomnum.html' class="list-group-item pjaxlink">
+                        Python抓取地产小区数据
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#WebCrawler">WebCrawler</a>
+                      <span class="badge pull-right">1</span>
+                    </h4>
+                  </div>
+                  <div id="WebCrawler" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/10/16/python-get-roomnum.html' class="list-group-item pjaxlink">
+                        Python抓取地产小区数据
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#NodeJS">NodeJS</a>
+                      <span class="badge pull-right">1</span>
+                    </h4>
+                  </div>
+                  <div id="NodeJS" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/11/17/nodejs-webot.html' class="list-group-item pjaxlink">
+                        利用nodejs搭建微信机器人
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#JavaScript">JavaScript</a>
+                      <span class="badge pull-right">2</span>
+                    </h4>
+                  </div>
+                  <div id="JavaScript" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/11/23/js-sendwechat.html' class="list-group-item pjaxlink">
+                        利用js定时发送微信
+                      </a>
+                    
+                      <a  href='/2014/11/17/nodejs-webot.html' class="list-group-item pjaxlink">
+                        利用nodejs搭建微信机器人
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#Android">Android</a>
+                      <span class="badge pull-right">1</span>
+                    </h4>
+                  </div>
+                  <div id="Android" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/11/27/transfrom-studio-to-eclipse.html' class="list-group-item pjaxlink">
+                        将Android Studio工程转换到Eclipse下
+                      </a>
+                    
+                  </div>
+                </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12 aside3">
+        <div id="container">
+          <div id="pjax">
+            <div class="row">
+  <div class="col-md-12 aside3-title">
+    <br>
+    <h2 id="#identifier">浪潮之巅——Intel和他的x86</h2>
+    2014年11月18日
+  </div>
+  <div class="col-md-12 aside3-content">
+    <!-- 目录 -->
+<div class="content">
+    <h3><a href="javascript:;" id="content_btn">[目录]</a></h3>
+    <div id="content_table" style="display:none;">
+        <div id="nav"></div>
+    </div>
+</div>
+
+    <hr>
+    <div id="content">
+      <p>Intel像一个爷们，而且是偏执狂，他关注用户需求，懂得坚持自我，坚信勤能补拙。</p>
+
+<blockquote>
+<p>我现在这么努力，都是为了证明当初选择的正确。</p>
+</blockquote>
+
+<h2>发迹史</h2>
+
+<p>1957年，‘仙童’半导体成立，英文名FairChild，我原先以为这英文名是音译的，原来特么是直译啊（看音译‘费尔柴尔德’，联想到了Rothschild）。<strong>半导体之父</strong>肖克利（W.Shockley）博士，离开<strong>贝尔实验室</strong>，来到<strong>硅谷</strong>，创办<strong>肖克利实验室</strong>，吸引了八名青年才俊。后来由于科学家不会管理，才俊先后奔走，人称<a href="http://baike.baidu.com/view/647403.htm">八叛逆</a>（The Traitorous Eight）。其中包括Intel的创始人，N. Noyce\R.Moore。AMD的创始人是仙童公司的销售部长，后来也出走了。如果换乔帮主更优雅一点的说法：</p>
+
+<blockquote>
+<p>“仙童半导体公司就象个成熟了的蒲公英，你一吹它，这种创业精神的种子就随风四处飘扬了。”</p>
+</blockquote>
+
+<p>Intel最初只能给IBM\DEC打打下手，做做边角料，生产些低端处理器。当时计算机都是大号的（吐槽，我们初高中时代学信息课，非要死记硬背的巨型机\大型机\小型机\微机，背这玩意儿有毛用，大部分人一辈子也见不到除了微机以外的机器），IBM作为一名忠厚老实的老大哥，是不愿意搞一些小玩意儿的。搞PC也懒得去设计处理器，写操作系统，直接扔给了Intel和微软。在70年代末80年代初，曾涌现出一大批微处理器，德州仪器、摩托罗拉、贝尔实验室，但如今人们提起微处理器，各类网站教科书全都齐刷刷地指向Intel 8086，因为它被那个时代选中了，它并不是第一批微处理器，也不是第一个技术专利，而是PC开始走向千家万户的一个象征。</p>
+
+<blockquote>
+<p>其实当时的现实远没有那么美好，但人们，特别是媒体，回过头来看时，总是给成功者们一个相对优雅一点的标签。牛逼的人，小时候放个P都是香的。</p>
+</blockquote>
+
+<p>我觉得，看计算机这60年的历史，还是真实一点吧。</p>
+
+<h2>专注的力量</h2>
+
+<p>Intel所处的80年代，也正好是日本经济腾飞的时期，当时日本股市占了全世界的一半。PC里面接近6成的芯片由日本公司出产，日本人甚至急于把美国的半导体工业踩在脚下。</p>
+
+<p>Intel审时度势，当时果断关闭了内存业务，专心做处理器，并大规模加大处理器的研发费用，势要把技术密集型进行到底。80386的总研发费用3亿美元，这笔钱放当时超过了中国的五年计划的科研投入。后来的日本股市市值大蒸发，经济倒退二十年。资金密集型的日本半导体也很难跟Intel叫板了。</p>
+
+<p>当时摩托罗拉技术上是优于Intel的，但其受限于体制问题，moto更像是老人，大的变动就伤筋动骨，Intel更像年轻人，善于调整，面对市场积极变化。而且处理器仅仅是MOTO的一个部分，对Intel来讲是整个江山。moto是无法像Intel那样下血本的。</p>
+
+<h2>臭就是臭，说的就是你，CISC！</h2>
+
+<p>我的专业方向是系统结构，记得当时整个大三，我都在纠结一个问题，RISC这么NB，为啥Intel不用？</p>
+
+<p>首先，RISC为啥NB？
+人类在研究计算机硬件结构时，习惯把生产生活中的经验贯彻其中，形成的学科称之为计算机体系结构。Intel由于时代所限，最开始采取了复杂指令集（CISC）沿用至今。</p>
+
+<p>我还是打个比方吧。</p>
+
+<ul>
+<li>把处理器比作厨子，内存比作库房。</li>
+<li>假设：顾客对菜品的味道、风格没有要求，只关注其营养（功能）是否到位。</li>
+<li>评价标准：上菜效率</li>
+</ul>
+
+<p>这样一来，CISC就是一家中餐馆：</p>
+
+<ol>
+<li>菜谱（指令集）上有简单的清炒芥兰、麻婆豆腐，还有复杂的北京烤鸭、佛跳墙，做一道菜的时间是不相等的，而且差异很大，工序复杂，这样一来流水线作业就显得很困难，锅里还炖着佛跳墙呢，下一道菜洗好切好也没用啊，反正都得等</li>
+<li>一般做菜的时候就得取菜（访存），工作台（寄存器）有限，菜做成半成品没地放，还得送回库房</li>
+<li>服务员（编译器）会根据顾客的点菜情况，安排厨师的做菜顺序（优化），这种情况下次序安排组合太少，效率改善不大</li>
+</ol>
+
+<p>RISC更像是西餐（讨厌西餐=-=）：</p>
+
+<ol>
+<li>菜谱上全是简单的菜品，菜名格式统一（指令集规整），都三个字的（想不出别的比喻了），比如西兰花，炸鸡腿，烤披萨（做披萨真的巨特么简单），而且做这些菜的时间是差不多的（执行步调统一），工序简单，易于实现流水线，更中餐馆比，可能菜要多上几个</li>
+<li>工作台大，半成品有地方放，做菜的时候只从工作台取，工作台上没有的再去库房</li>
+<li>服务员能灵活调整做菜顺序，提高厨师效率</li>
+</ol>
+
+<p>（唔。。。终于举完了，T_T）</p>
+
+<p>用行话说，RISC的优势在于：</p>
+
+<ol>
+<li>更好地迎合了存储指令的密度，缓和了存储墙问题，加速常用指令</li>
+<li>指令集规整，固定指令长度，易于流水线实现</li>
+<li>编译器优化空间大</li>
+</ol>
+
+<p>对于Intel的故事是，一开始就开了一家中餐馆，开了一半发现西餐馆特别有效率，对他自己厨师的效率提出了相当严峻的挑战。但为了维护顾客群体，不能关了中餐馆再开一家西餐馆啊，这样之前的回头客就都没了，只能硬着头皮继续做中餐。</p>
+
+<p>由于效率不如人，业界骂声一片：他们中餐馆做个菜等老半天，大家别去那家吃饭了！面对这种情况，Intel坚定地坚持中餐路线一百年不动摇，一方面砸钱给研发部，买几千块的菜刀，上万块钱的炉子（这些都是在说制造工艺啦，不知道能不能意会），厨子虽然比不上人家，但基础设施甩你们几条街啊；另一方面请一些做西餐的厨子吸取经验，菜单还是老菜单，但厨房内部可以按西餐的方法来调整（微程序）。</p>
+
+<p>后来的故事，大家渐渐发现，西餐厨师理论上那么牛，可开起来的馆子效率上就是比不过Intel家的。争论也就逐渐缓和了。</p>
+
+<p>好了，结束这个糟糕的比喻。90年代中期后，Intel对自身CPU的微结构不断调整，从微结构来看，已经很难说是CISC了。实际上，Intel的处理器在指令译码阶段就像RISC方向转化，后端流水线已经是RISC形式。
+随着体系结构和微电子技术的进步，CISC在结构上的劣势也在逐渐缩小。RISC阵营在此期间，本来市场就不大，还各自为战，结果在与Intel的商界论战中节节败退。</p>
+
+<h2>向前兼容</h2>
+
+<p>Intel是个典型的商人，顾客即是上帝。为了向前兼容，不惜逆着时代潮流（RISC vs CISC）趟出一条血路。</p>
+
+<p>用户都是懒惰的，换机器可以，换软件可办不到，软件还得一个一个买新的，多麻烦啊。开发人员就更不想换了，直接换一套体系，所有的东西推倒重来，这种事情想都不敢想。</p>
+
+<p>Intel的做事策略，勤能补拙。技术上有劣势，拿钱砸啊，不到最后谁能证明这条路是错的？只要市场的那块蛋糕在手，我就稳如泰山，岿然不动。与其说，Intel搞死了竞争对手，不说说，对手们都是纷纷给憋死了。只要你执着，媳妇终有一天熬成婆。</p>
+
+<p>这里要请出革命路上好基友，微软小亲亲。一开始，</p>
+
+<blockquote>
+<p>微软：只是因为人群中多看了对方一眼，从此再也不能忘记你容颜。</p>
+</blockquote>
+
+<p>PC时代的美好童话，在IBM这个倒霉的媒人一挥手之后，正式拉开序幕。从此之后Bill（Bill Gates）要什么，Andy（Intel CEO）就给什么（Andy-Bill定律）。夫唱妇和，过着你挑水来我浇园的幸福生活。</p>
+
+<p>他俩为什么能走到一起，因为有共同的人生追求：向前兼容。保证用户之前的软件能用，就意味着能留着顾客。要没了顾客，他俩什么也没有。后来的故事我们也知道了，这两位仁兄一个拉需求，一个给产品，在摩尔定律的印证下，成就了辉煌的PC时代。</p>
+
+<h2>AMD小弟弟</h2>
+
+<p>显卡吧流传着这样一句话，i3默秒全。Intel家的低端i3能秒AMD全家，黑的就是AMD。</p>
+
+<p>小弟弟是由仙童的销售部长一手带大的，风格像极了一个销售人员。在市场需求的驱动下，做更便宜的产品。市场需要什么就做什么。同时为了躲开反垄断，Intel也带着AMD做CPU。后来大哥烦了，不想让小弟抄，80386就打了一场打官司。法庭的仲裁结果是，小弟可以接着生产。有时候就打打闹闹，但总然会达成和解，小弟与大哥之间也是亦敌亦友，遇到RISC挑战这种生死存亡的情况，他俩还是要团结起来相互依存。</p>
+
+<p>奔4的超长流水线，没让自己火起来反而让AMD风光了一把（当年的雷鸟vs奔3的精彩段落依旧历历在目）。小弟也借后来的64位在高端市场来挑战Intel。但大哥总归是大哥，酷睿之后就把小弟打得翻不起身。后来就有了‘i3默秒全’的故事。</p>
+
+<h2>Tough Man with his Tough Future</h2>
+
+<p>能力越大，责任越大。市场占有率如此高的Intel，压力也非同小可。前几年提的超极本也没成多大气候。后PC时代，移动终端迅速崛起，又让Intel开始修补起功耗这个短板。</p>
+
+<p>这次的敌人不再是当年那一群各自为战的乌合之众，是一个卖授权为主的ARM公司。Intel的性能优势毋庸置疑，但能耗比要输于ARM。而且Intel赖以为寄的市场是通用PC，换到移动终端，单个产品的利润降低，市场减小，这很不符合Intel的做事习惯，当然这种小打小闹下Intel也很难盈利。未来还是很艰难，但愿这位纯爷们，不要在移动领域丢了市场。</p>
+
+<p>总结：</p>
+
+<ol>
+<li>要专注，而且要很偏执地专注</li>
+<li>市场决定企业生存，技术落后并不可怕</li>
+<li>世界都在指责你的时候，试着忽略那些耳边的声音，抓住问题的本质</li>
+</ol>
+
+    </div>
+    <hr>
+    <!--<div id="disqus_thread">-->
+  <!--<button type="button" name="kvenux" class="btn btn-default show-commend">显示评论</button>-->
+  <!--</div>-->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'kvenux'; // required: replace example with your forum shortname
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+  </div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="position:fixed;right:20px;top:10px;">
+  <button id="nav_btn" class="btn btn-primary">
+    <i class="fa fa-2x fa-navicon"></i>
+  </button>
+</div>
+<script type="text/javascript" src="/public/js/jquery.js"></script>
+<script type="text/javascript" src="/public/js/bootstrap.js"></script>
+<script src="/public/js/jquery.pjax.js"></script>
+<script src="/public/js/prettify/prettify.js"></script>
+<script src="/public/js/base.js"></script>
+<script>
+    $('a[href="#技术"]').tab('show');
+</script>
+
+  <!--<script>-->
+  <!--(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){-->
+       <!--(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),-->
+       <!--m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)-->
+       <!--})(window,document,'script','//www.google-analytics.com/analytics.js','ga');-->
+       <!--ga('create', '', '');-->
+       <!--ga('send', 'pageview');-->
+<!--</script>-->
+<script type="text/javascript">
+  var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+  document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd375c73c33a01c83cb5f9d2e87e54b5b' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+</body>
+</html>

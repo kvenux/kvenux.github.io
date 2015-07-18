@@ -1,0 +1,68 @@
+---
+layout: post
+title: CC1 IceBreaker---Run for Your Life
+category: Toastmaster
+tags:
+keywords:
+description:
+---
+
+##Run for Your Life
+
+Have you ever been experienced a kind of feeling that you've been totallly given up by someone you love?
+I've been there once. At that time she said 'You're a nice person, but not the right one for me.'
+I was really sad. For me, she was my love, she was my hope, she was my whole world. I couldn’t accept the truth that I would never see that smile on her face again. Apparently I had to get over her which was supposed to be the most difficult thing for me to do.
+
+After that, my world crushed. Everything in my life turned into grey. I didn’t want to work, I didn’t want to go out with my friends, I even skipped the match of my favourite football team which I used to seeing a lot. I was sitting in front of the computer all day long, drinking beer and playing some computer games. My life was miserable. What’s even worse, I realized that I couldn’t find where myself really is.
+
+Luckily, those days didn’t last long. One day I saw a famous movie again, Forest Gump, when Forest was abandoned by Jenny, he couldn’t help running. I thought maybe I should have a try. I mean, both of us were trying to get rid of the pain that some girls gave to us.
+
+So I started to run. At first, I kept running for 30 minutes every afternoon. Then 45 minutes, and then even an hour. At 5 o’clock every afternoon, I felt that my body was burning. It was like a strong voice shouting at me---'Run, Keven, Run for your life!'
+
+Later, I discovered that something different was happening in my life.
+I got more focused on my work and I was able to enjoy it. I began to hang out with my friends, playing some card games. And I loved to see Arsenal's games although they like selling out their captains. I got all my passion back and I found that life is such an amazing thing. To tell you the truth, as I ran 8km a day, I lost about 20 pounds weight during those days. What’s more surprising is that my sleeping problem was gone!
+
+Running really became a way to challenge myself. It seems that there is a guy, and I need to defeat him. Running allows me to truly climb hills and clear obstacles. It gives me a strong feeling of freedom that my legs and my body are so strong. Thanks to running, confidence come back to me.
+
+Then I pushed myself to try new things. I joined students union of our department, and passed the election to be the president. I began to play piano although I‘m not so good at it. I even participated in a Toastmaster club to enhance my communication skills. For me now, I’m not afraid of expressing myself in front of people. My audience love my speech, of that I‘m sure.
+
+When I am running, I can feel my own breath, and my own heart-beating. This is the evidence that shows I am alive. As before, when I was alone, I spent a lot of time on computer and cellphone, playing games, watching videos or updating social network pages. While I was doing all these stuff, I was not with myself. Fortunately, I found that running gave me the chance to actually be with myself. And as soon as I learn to be with myself, I get the power to face those tough things. That dude told me, someone who doesn’t love you would not be the one. Move on to find her. You know what, she's near, of that I‘m sure.
+
+Dear friends, when you are down, when you fail the exam, or especially when you are dumped by your boyfriend/girlfriend, get to run. Go to find yourself back and take good care of him.
+
+##跑步的时间线
+
+一开始是为了减肥，因为高三那年我很清楚地记得体重秤上的数字，79，那时的状态是无任何体育锻炼，身体很虚，整个那一年我都在不停地对自己的身体进行否定。多年以后翻出当年的高考准考证，面对镜头那个小胖子捋顺了油光锃亮的头发，嘴角还带着一丝皮笑肉不笑。跟阳光这种词完全搭不上边啊，不忍直视。
+
+大一刚来就开始尝试跑步。北京跟我家属于同一纬度，海拔差距2200，大气压从77kPa到了我们熟悉的101kPa，可以直观地理解为我的生存环境的含氧量瞬间多了1/3。这种差距最明显的就是跑步，在家里我跑1km简直就是要老命，长跑或者慢跑基本上从来没远过3km。当然这种高海拔也是有好处的，比如肺活量是5800。
+
+体重一直在75左右浮动，大二下开始健身，减脂和增肌之间一直不好平衡，跑步的事情也从来没养成习惯。不过那时跑个20圈算是可以很得瑟的一个资本。10年智能手机出现，有时靠计步软件分享个10km装个X。
+
+正式开始跑步还是如前文所说的，12年年初，下了很大的决心，也是为了缓解自己压抑的生活，开始了纯有氧。那时对自己的身体的改造是革命性的，放弃无氧，开始大规模节食。3月份开始时体重是75，4月底已经68，一度触到过66的线。偶尔有天发现自己腹肌轮廓显现，便也顺带练练腹肌。跑步这个习惯算是养成了。
+
+再后来跑步一直保持，每周三四次，每次4\5km。直到读到一本书，[无器械健身](http://www.amazon.cn/%E6%97%A0%E5%99%A8%E6%A2%B0%E5%81%A5%E8%BA%AB-%E7%94%A8%E8%87%AA%E8%BA%AB%E4%BD%93%E9%87%8D%E9%94%BB%E7%BB%83-%E9%A9%AC%E5%85%8B%E2%80%A2%E5%8A%B3%E4%BC%A6/dp/B008YS7LRA/ref=sr_1_cc_1?s=aps&ie=UTF8&qid=1415591853&sr=1-1-catcorr&keywords=%E6%97%A0%E5%99%A8%E6%A2%B0%E5%81%A5%E8%BA%AB)，把跑步喷得挺狠。想想也对，人的身体是一个非常懒惰的机体，他只求适应是不会主动改变的。跑步时间长了，越来越省力，越来越轻松，给身体带来的变化越来越小，但对于人体的肌肉组织、膝盖却是个长期的劳损。所以我的态度也转变了，不再强迫自己去长期地、有规律地、长时间地跑步，只当愉悦身心，调节生活节奏。
+
+13年春又一次去奥森跑步，15km，没怎么热身，加之天气凉，膝盖疼了好久，此为隐患。14年报了北马，开跑之前训练没有规律，加之跑步姿势不正确，上了20整个膝盖就不好了。北马跑了一半多一点就放弃了，那天的经历很开心。但领完行李拖着病腿从奥体回来时，听到路边排山倒海的加油，还是略为遗憾的。
+不过就这样吧，我还是倾向于打打球，练练肌肉，把注意力集中于那些能给身体带来改变的运动。跑步对我来说，不是非要一天15km，年底非要完成马拉松的运动，而是听听音乐看看风景pm低的时候享受空气然后顺便跑一跑的运动，恩，这就对了。
+
+##跑步与找回自己
+
+关于为什么失恋失恋之后会迅速养成跑步的习惯。一方面，是自己的不甘，到底是被人放弃了，一想起这儿内心就不能平静，血液开始沸腾，然后开始跑。还有一点也是很重要的，**创造一个跟自己相处的环境**。那时候的状态非常差，一天到晚都是一个极其寂寞的状态，根本静不下心来做事。每天都被一堆屏幕包围着，因为失恋的人状态都那样，没事干立即就会往痛处想，然后又陷入那个死循环。最好的方式是转移注意力啊，可我的注意力根本集中不起来。令人惊喜的是，跑步真是一个跟自己相处的小空间。
+
+我的跑步理念是，只要是在跑，啥速度都行。于是我的跑步速度长期维持在8~10之间。这个速度是很理想的，可以听歌，可以天马行空地思考，可以静下心来想一些事儿。至于减肥啊，健康方式啊，都是跑步给我带来的副产品，当然我会觉得很幸运，特别是对一个一蹶不振的少年来说。
+
+后来的故事就好讲了，生活节奏平快了，做事也专心了，自己的一些行为习惯在迅速发生改变。跑步把我带回了一个认识自己改造自己的道路上。
+
+##破冰之旅
+
+对每位头马人士来讲，CC1都是个非常难忘的经历。因为你没有任何目标，完全是一匹脱缰的野马。说自己还不好说，就说最奇葩最牛逼最深刻的那些经历不就行了。CC1是了解这位讲者最初的阶段。今年我很赞同一句话：
+
+> 你认识一个人很长时间，你觉得你知道他是一个什么样的人。但事实是，你一点都不了解他。
+
+这句话在我听CC1的时候无数次验证过了。现如今方便的交流和密集的屏幕，让对方的各种信息变得非常地容易得到。这种社交网络带来的，大规模的，浮于表面的交流总给我们一种了解对方的错觉。其实不然，强连接越来越少，面对面越来越难，真实的交流少得可怜。可以好不夸张的说，现在人已经养成了两面性格，一个是在网络中的，一个是在真实生活中的。屏幕这边是个卖萌的妹子，屏幕那头是只抠脚大汉，此种情况比比皆是。于是乎，今年我遇到了太多的——“哇原来你是这样的呀！”
+
+回归正题。那时初入头马，本人天生性格里好得瑟，站在台上肯定祭出自己最想描述的那部分。于是这个从谷底飞到完美新世界的演讲稿就这样达成了。准备了三天，排练了好多遍。那天正好是春季演讲比赛，来了很多人。后来顺利晋级，也接小区比赛的场地，认识了更多同小区的头马们。后来再见到那些伙伴们，第一句就是诶哟你就是那个爱跑步的，新标签get。CC1让我获益至此，已然无憾。
+
+##一开始跑之后就停不下来
+
+希望许多美好的习惯如同跑步一样，循环往复地去影响你我的生活。

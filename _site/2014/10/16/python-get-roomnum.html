@@ -1,0 +1,605 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+<title>Python抓取地产小区数据 | Keven's Blog</title>
+<meta name="author" content="Keven">
+
+  
+    <link rel="shortcut icon" href="http://kvenux.qiniudn.com/lion.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/bootstrap.css">
+    <link rel="stylesheet" href="/public/css/font-awesome.css">
+    <link rel="stylesheet" href="/public/js/prettify/prettify.css">
+    <link rel="stylesheet" href="/public/css/base.css">
+    <link href="/pages/atom.xml" rel="alternate" title="Keven's Blog" type="application/atom+xml">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 aside visible-md visible-lg">
+  <div class="row">
+    <div class="col-md-3 col-xs-3 aside1">
+      <br>
+      <a class="pjaxlink" href="/"><img src="http://kvenux.qiniudn.com/lion.png" class="img-circle avatar"></a>
+      <br><br>
+      <ul class="nav nav-pills nav-stacked">
+        
+          <li><a href="#技术" data-toggle="tab">技术</a></li>
+        
+          <li><a href="#笔记" data-toggle="tab">笔记</a></li>
+        
+          <li><a href="#观点" data-toggle="tab">观点</a></li>
+        
+          <li><a href="#toastmaster" data-toggle="tab">toastmaster</a></li>
+        
+        <li><a href="#tags" data-toggle="tab">TAGS</a></li>
+        <li><a class="pjaxlink" href="/pages/archive.html">归档</a></li>
+        <li><a class="pjaxlink" href="/pages/about.html">关于</a></li>
+      </ul>
+      <div class="aside1_bottom">
+        <table class="table table-condensed">
+          <tr>
+            <td><a href="/pages/atom.xml" target="_blank"><i class="fa fa-rss fa-2x"></i></a></td>
+            <td><a href="mailto:buaasjw@gmail.com"><i class="fa fa-envelope-o fa-2x"></i></a></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="col-md-9 col-xs-9 aside2">
+      <div class="row">
+        <div class="tab-content">
+           
+            <div class="tab-pane" id="技术">
+              <div class="list-group">
+                <h2 class="center">技术</h2>
+                
+                  <a href="/2014/11/27/transfrom-studio-to-eclipse.html" class="list-group-item pjaxlink">将Android Studio工程转换到Eclipse下</a>
+                
+                  <a href="/2014/11/23/js-sendwechat.html" class="list-group-item pjaxlink">利用js定时发送微信</a>
+                
+                  <a href="/2014/11/17/nodejs-webot.html" class="list-group-item pjaxlink">利用nodejs搭建微信机器人</a>
+                
+                  <a href="/2014/10/16/python-get-roomnum.html" class="list-group-item pjaxlink">Python抓取地产小区数据</a>
+                
+                  <a href="/2014/09/02/how-to-bulid-your-personal-blog.html" class="list-group-item pjaxlink">如何优雅地搭建博客</a>
+                
+              </div>
+            </div>
+           
+            <div class="tab-pane" id="笔记">
+              <div class="list-group">
+                <h2 class="center">笔记</h2>
+                
+                  <a href="/2014/11/18/intel-tough-man.html" class="list-group-item pjaxlink">浪潮之巅——Intel和他的x86</a>
+                
+                  <a href="/2014/10/14/my-reading-notes.html" class="list-group-item pjaxlink">我的笔记这样写</a>
+                
+                  <a href="/2014/10/14/hackers-2.html" class="list-group-item pjaxlink">黑客与画家 第二章 黑客也是创造者</a>
+                
+              </div>
+            </div>
+           
+            <div class="tab-pane" id="观点">
+              <div class="list-group">
+                <h2 class="center">观点</h2>
+                
+                  <a href="/2014/10/14/write-down-your-blog.html" class="list-group-item pjaxlink">写下你的博客</a>
+                
+              </div>
+            </div>
+           
+            <div class="tab-pane" id="toastmaster">
+              <div class="list-group">
+                <h2 class="center">toastmaster</h2>
+                
+                  <a href="/2014/11/10/CC1-run-for-your-life.html" class="list-group-item pjaxlink">CC1 IceBreaker---Run for Your Life</a>
+                
+              </div>
+            </div>
+          
+          <div class="tab-pane" id="tags">
+            <div class="panel-group" id="accordion">
+              <h2 class="center">TAGS</h2>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#Blog">Blog</a>
+                      <span class="badge pull-right">2</span>
+                    </h4>
+                  </div>
+                  <div id="Blog" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/10/14/write-down-your-blog.html' class="list-group-item pjaxlink">
+                        写下你的博客
+                      </a>
+                    
+                      <a  href='/2014/09/02/how-to-bulid-your-personal-blog.html' class="list-group-item pjaxlink">
+                        如何优雅地搭建博客
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#Jekyll">Jekyll</a>
+                      <span class="badge pull-right">1</span>
+                    </h4>
+                  </div>
+                  <div id="Jekyll" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/09/02/how-to-bulid-your-personal-blog.html' class="list-group-item pjaxlink">
+                        如何优雅地搭建博客
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#GitHub">GitHub</a>
+                      <span class="badge pull-right">1</span>
+                    </h4>
+                  </div>
+                  <div id="GitHub" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/09/02/how-to-bulid-your-personal-blog.html' class="list-group-item pjaxlink">
+                        如何优雅地搭建博客
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#GitCafe">GitCafe</a>
+                      <span class="badge pull-right">1</span>
+                    </h4>
+                  </div>
+                  <div id="GitCafe" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/09/02/how-to-bulid-your-personal-blog.html' class="list-group-item pjaxlink">
+                        如何优雅地搭建博客
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#Markdown">Markdown</a>
+                      <span class="badge pull-right">1</span>
+                    </h4>
+                  </div>
+                  <div id="Markdown" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/09/02/how-to-bulid-your-personal-blog.html' class="list-group-item pjaxlink">
+                        如何优雅地搭建博客
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#SAE">SAE</a>
+                      <span class="badge pull-right">1</span>
+                    </h4>
+                  </div>
+                  <div id="SAE" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/09/02/how-to-bulid-your-personal-blog.html' class="list-group-item pjaxlink">
+                        如何优雅地搭建博客
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#WordPress">WordPress</a>
+                      <span class="badge pull-right">1</span>
+                    </h4>
+                  </div>
+                  <div id="WordPress" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/09/02/how-to-bulid-your-personal-blog.html' class="list-group-item pjaxlink">
+                        如何优雅地搭建博客
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#Artist">Artist</a>
+                      <span class="badge pull-right">1</span>
+                    </h4>
+                  </div>
+                  <div id="Artist" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/10/14/hackers-2.html' class="list-group-item pjaxlink">
+                        黑客与画家 第二章 黑客也是创造者
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#ReadingNotes">ReadingNotes</a>
+                      <span class="badge pull-right">1</span>
+                    </h4>
+                  </div>
+                  <div id="ReadingNotes" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/10/14/my-reading-notes.html' class="list-group-item pjaxlink">
+                        我的笔记这样写
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#Thinking">Thinking</a>
+                      <span class="badge pull-right">1</span>
+                    </h4>
+                  </div>
+                  <div id="Thinking" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/10/14/write-down-your-blog.html' class="list-group-item pjaxlink">
+                        写下你的博客
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#Python">Python</a>
+                      <span class="badge pull-right">1</span>
+                    </h4>
+                  </div>
+                  <div id="Python" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/10/16/python-get-roomnum.html' class="list-group-item pjaxlink">
+                        Python抓取地产小区数据
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#WebCrawler">WebCrawler</a>
+                      <span class="badge pull-right">1</span>
+                    </h4>
+                  </div>
+                  <div id="WebCrawler" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/10/16/python-get-roomnum.html' class="list-group-item pjaxlink">
+                        Python抓取地产小区数据
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#NodeJS">NodeJS</a>
+                      <span class="badge pull-right">1</span>
+                    </h4>
+                  </div>
+                  <div id="NodeJS" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/11/17/nodejs-webot.html' class="list-group-item pjaxlink">
+                        利用nodejs搭建微信机器人
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#JavaScript">JavaScript</a>
+                      <span class="badge pull-right">2</span>
+                    </h4>
+                  </div>
+                  <div id="JavaScript" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/11/23/js-sendwechat.html' class="list-group-item pjaxlink">
+                        利用js定时发送微信
+                      </a>
+                    
+                      <a  href='/2014/11/17/nodejs-webot.html' class="list-group-item pjaxlink">
+                        利用nodejs搭建微信机器人
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#Android">Android</a>
+                      <span class="badge pull-right">1</span>
+                    </h4>
+                  </div>
+                  <div id="Android" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/11/27/transfrom-studio-to-eclipse.html' class="list-group-item pjaxlink">
+                        将Android Studio工程转换到Eclipse下
+                      </a>
+                    
+                  </div>
+                </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12 aside3">
+        <div id="container">
+          <div id="pjax">
+            <div class="row">
+  <div class="col-md-12 aside3-title">
+    <br>
+    <h2 id="#identifier">Python抓取地产小区数据</h2>
+    2014年10月16日
+  </div>
+  <div class="col-md-12 aside3-content">
+    <!-- 目录 -->
+<div class="content">
+    <h3><a href="javascript:;" id="content_btn">[目录]</a></h3>
+    <div id="content_table" style="display:none;">
+        <div id="nav"></div>
+    </div>
+</div>
+
+    <hr>
+    <div id="content">
+      <p>早上收到一哥们qq，想让我帮忙把<a href="http://beijing.homelink.com.cn/xiaoqu/pg1/">链家地产</a>所有小区信息给获取到。初步感觉很麻烦，因为要解析HTML，难度略大没时间弄。</p>
+
+<p>恰巧在吃早饭碰到一个知乎问题：<a href="http://www.zhihu.com/question/20899988">如何入门Python</a>，第二高票的回答是一位山东大学的大牛所写，照着范例试了试，居然不到一小时搞定了。</p>
+
+<p>本文程序参考了他写的<a href="http://blog.csdn.net/pleasecallmewhy/article/details/8932310">[Python]网络爬虫（八）：糗事百科的网络爬虫（v0.3）源码及解析(简化更新)</a></p>
+
+<h2>正则表达式 K.O. HTML解析</h2>
+
+<p>首先把那哥们的需求抛出来：
+获取<a href="http://beijing.homelink.com.cn/xiaoqu/pg1/">链家地产</a>页面上的所有小区的名字，位置，住户数量</p>
+
+<p>初步分析：</p>
+
+<ol>
+<li>网页URL：http://beijing.homelink.com.cn/xiaoqu/pg1/ 很有规律，后面的pg1~1088即可完成遍历</li>
+<li>网页中就有名字，位置信息</li>
+<li>用户数量得从小区主页上找http://beijing.homelink.com.cn/xiaoqu/1111045342577/</li>
+</ol>
+
+<p>第二步很好完成的原因是，<a href="http://beijing.homelink.com.cn/xiaoqu/pg1/">小区页面</a>上查看源代码后，搜索小区名字总会有结果吧，果然惊喜地发现：</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;public indetail&quot;</span> <span class="na">style=</span><span class="s">&quot;z-index:20&quot;</span><span class="nt">&gt;</span>   
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;yldt&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;javascript:void(0);&quot;</span> <span class="na">onClick=</span><span class="s">&quot;ditu(&#39;39.904839&#39;, &#39;116.242141&#39;, &#39;永乐东区&#39;, &#39;石景山区&#39;, &#39;鲁谷&#39;, &#39;yongledongqu&#39;, &#39;1111027381852&#39;)&quot;</span><span class="nt">&gt;&lt;i&gt;&lt;/i&gt;&lt;span&gt;</span>预览地图<span class="nt">&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;homeimg&quot;</span><span class="nt">&gt;</span></code></pre></div>
+
+<p>这就很好办啦，找到中间那句就完事了。
+然后第一次用了暴力的<a href="http://zh.wikipedia.org/zh-cn/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F">正则表达式</a>，这个<a href="http://deerchao.net/tutorials/regex/regex.htm">三十分钟入门网站</a>不错。</p>
+
+<p>我的理解，计算机世界处理的原材料都是信息，计算机处理中的信息的标签可以是海量\繁杂的，但必然有个特点：有规律。比如把信息写成程序，组织成网页。而正则表达式就是处理这些海量且有规律可循信息的强大工具。
+我查找这句的正则表达式是：</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">myItems</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s">&#39;&lt;div class=&quot;yldt&quot;&gt;(.*?)&lt;/div&gt;&#39;</span><span class="p">,</span><span class="n">unicodePage</span><span class="p">,</span><span class="n">re</span><span class="o">.</span><span class="n">S</span><span class="p">)</span></code></pre></div>
+
+<p>找到开头结尾后，中间的(.*?)意思是以不是\n的字符开头，中间任意长度，结尾得是个字符的字符串。总之中间有东西就好。
+欧克，试了一下果然OK，把字符串简单处理后，前两步完成。</p>
+
+<p><img src="http://kvenux.qiniudn.com/QQ%E5%9B%BE%E7%89%8720141016215612.jpg" alt="此处输入图片的描述"></p>
+
+<p>第三步要点到小区的页面，再用同样的方法得到住户数目。
+又发现一个惊喜，上图中最后的那个字符串就是URL里的小区编号，比如http://beijing.homelink.com.cn/xiaoqu/1111045342577/
+那这下好办了^_^</p>
+
+<p>程序代码：</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="c"># -*- coding: utf-8 -*-</span>
+<span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Pool</span>
+<span class="kn">from</span> <span class="nn">multiprocessing.dummy</span> <span class="kn">import</span> <span class="n">Pool</span> <span class="k">as</span> <span class="n">ThreadPool</span>
+<span class="kn">import</span> <span class="nn">urllib2</span>
+<span class="kn">import</span> <span class="nn">urllib</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">thread</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+
+<span class="k">def</span> <span class="nf">GetPage</span><span class="p">(</span><span class="n">page</span><span class="p">):</span>
+  <span class="c">#myUrl = &quot;http://m.qiushibaike.com/hot/page/&quot; + page</span>
+  <span class="n">myUrl</span> <span class="o">=</span> <span class="s">&quot;http://beijing.homelink.com.cn/xiaoqu/&quot;</span> <span class="o">+</span> <span class="n">page</span>
+  <span class="k">print</span> <span class="n">myUrl</span>
+  <span class="n">user_agent</span> <span class="o">=</span> <span class="s">&#39;Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)&#39;</span>
+  <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="s">&#39;User-Agent&#39;</span> <span class="p">:</span> <span class="n">user_agent</span>   <span class="p">}</span>
+  <span class="n">req</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="n">myUrl</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
+  <span class="k">try</span><span class="p">:</span>
+    <span class="n">myResponse</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+  <span class="k">except</span><span class="p">:</span>
+    <span class="k">print</span> <span class="n">page</span><span class="p">,</span><span class="s">&#39; error!&#39;</span>
+    <span class="k">return</span> <span class="s">&#39;&#39;</span>
+  <span class="n">myPage</span> <span class="o">=</span> <span class="n">myResponse</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+  <span class="n">unicodePage</span> <span class="o">=</span> <span class="n">myPage</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">&quot;utf-8&quot;</span><span class="p">)</span>
+
+  <span class="c"># 找出所有class=&quot;yldt&quot;的div标记</span>
+  <span class="c"># re.S是任意匹配模式，也就是.可以匹配换行符</span>
+  <span class="n">myItems</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s">&#39;&lt;div class=&quot;yldt&quot;&gt;(.*?)&lt;/div&gt;&#39;</span><span class="p">,</span><span class="n">unicodePage</span><span class="p">,</span><span class="n">re</span><span class="o">.</span><span class="n">S</span><span class="p">)</span>
+  <span class="n">items</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="n">lines</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+  <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">myItems</span><span class="p">:</span>
+    <span class="n">findHeader</span> <span class="o">=</span> <span class="s">&quot;onClick=</span><span class="se">\&quot;</span><span class="s">ditu(</span><span class="se">\&#39;</span><span class="s">&quot;</span>
+    <span class="n">itemstr</span> <span class="o">=</span> <span class="n">item</span><span class="p">[</span><span class="n">item</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">findHeader</span><span class="p">)</span><span class="o">+</span><span class="nb">len</span><span class="p">(</span><span class="n">findHeader</span><span class="p">):</span><span class="n">item</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\&#39;</span><span class="s">)</span><span class="se">\&quot;</span><span class="s">&gt;&quot;</span><span class="p">)]</span>
+    <span class="n">infolist</span> <span class="o">=</span> <span class="n">itemstr</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\&#39;</span><span class="s">, </span><span class="se">\&#39;</span><span class="s">&#39;</span><span class="p">)</span>
+    <span class="n">index</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">mapx</span> <span class="o">=</span> <span class="n">infolist</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">mapy</span> <span class="o">=</span> <span class="n">infolist</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">infolist</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">dist</span> <span class="o">=</span> <span class="n">infolist</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+    <span class="n">locaName</span> <span class="o">=</span> <span class="n">infolist</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+    <span class="n">pinyin</span> <span class="o">=</span> <span class="n">infolist</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+    <span class="n">snumber</span> <span class="o">=</span> <span class="n">infolist</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span>
+    <span class="n">roomNum</span> <span class="o">=</span> <span class="n">GetNum</span><span class="p">(</span><span class="n">snumber</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+      <span class="n">line</span> <span class="o">=</span> <span class="n">name</span><span class="o">+</span><span class="s">&#39;,&#39;</span><span class="o">+</span> <span class="n">mapx</span> <span class="o">+</span><span class="s">&#39;,&#39;</span><span class="o">+</span> <span class="n">mapy</span><span class="o">+</span><span class="s">&#39;,&#39;</span><span class="o">+</span> <span class="n">roomNum</span><span class="o">+</span><span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span>
+    <span class="k">except</span><span class="p">:</span>
+      <span class="k">return</span> <span class="s">&#39;&#39;</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="n">lines</span><span class="o">+</span><span class="n">line</span>
+  <span class="k">return</span> <span class="n">lines</span>
+
+  <span class="k">def</span> <span class="nf">GetNum</span><span class="p">(</span><span class="n">page</span><span class="p">):</span>
+    <span class="n">myUrl</span> <span class="o">=</span> <span class="s">&quot;http://beijing.homelink.com.cn/xiaoqu/&quot;</span> <span class="o">+</span> <span class="n">page</span> <span class="o">+</span><span class="s">&#39;/&#39;</span>
+    <span class="n">user_agent</span> <span class="o">=</span> <span class="s">&#39;Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)&#39;</span>
+    <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="s">&#39;User-Agent&#39;</span> <span class="p">:</span> <span class="n">user_agent</span>   <span class="p">}</span>
+    <span class="n">req</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="n">myUrl</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
+    <span class="n">fails</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+      <span class="k">if</span><span class="p">(</span><span class="n">fails</span><span class="o">&gt;</span><span class="mi">10</span><span class="p">):</span>
+        <span class="k">return</span>
+      <span class="n">myResponse</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">timeout</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+      <span class="k">break</span>
+    <span class="k">except</span><span class="p">:</span>
+      <span class="n">fails</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">myPage</span> <span class="o">=</span> <span class="n">myResponse</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">unicodePage</span> <span class="o">=</span> <span class="n">myPage</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">&quot;utf-8&quot;</span><span class="p">)</span>
+
+    <span class="n">text</span> <span class="o">=</span> <span class="s">&#39;&lt;dd&gt;房屋总数(.*?)&lt;/dd&gt;&#39;</span>
+    <span class="n">usample</span> <span class="o">=</span> <span class="nb">unicode</span><span class="p">(</span><span class="n">text</span><span class="p">,</span><span class="s">&#39;utf8&#39;</span><span class="p">)</span>
+    <span class="n">myItems</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">usample</span><span class="p">,</span><span class="n">unicodePage</span><span class="p">,</span><span class="n">re</span><span class="o">.</span><span class="n">S</span><span class="p">)</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">myItems</span><span class="p">:</span>
+      <span class="n">itemstr</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">&#39;utf-8&#39;</span><span class="p">)</span>
+      <span class="n">number</span> <span class="o">=</span> <span class="nb">filter</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">isdigit</span><span class="p">,</span> <span class="n">itemstr</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">number</span>
+<span class="k">print</span> <span class="s">u&quot;&quot;&quot;</span>
+<span class="s">  ---------------------------------------</span>
+<span class="s">  程序：小区爬虫</span>
+<span class="s">  版本：0.1</span>
+<span class="s">  作者：kvenux</span>
+<span class="s">  日期：2014-10-16</span>
+<span class="s">  操作：</span>
+<span class="s">  功能：</span>
+<span class="s">  ---------------------------------------</span>
+<span class="s">  &quot;&quot;&quot;</span>
+
+<span class="n">output</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;/home/www/roomNum.csv&#39;</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">)</span>
+<span class="n">line</span> <span class="o">=</span> <span class="s">&#39;name,mapx,mapy,roomNum</span><span class="se">\n</span><span class="s">&#39;</span>
+<span class="n">output</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span><span class="p">);</span>
+
+<span class="n">urlnames</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1088</span><span class="p">):</span>
+  <span class="n">urlnames</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39;pg&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+  <span class="n">lines</span> <span class="o">=</span> <span class="n">GetPage</span><span class="p">(</span><span class="s">&#39;pg&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+  <span class="n">output</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">lines</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">&#39;utf-8&#39;</span><span class="p">))</span>
+
+<span class="c">#pool=Pool(32)</span>
+<span class="c">#reslist = pool.map(GetPage,urlnames)</span>
+<span class="c">#pool.close()</span>
+<span class="c">#pool.join()</span>
+
+<span class="c">#for line in reslist:</span>
+  <span class="c">#output.write(line)</span>
+
+<span class="k">print</span> <span class="s">&#39;Done!&#39;</span></code></pre></div>
+
+<p>多线程出错了懒得调，就一个线程再那儿跑了半个多小时，我就干别的事情去了。回头看了一眼csv，画面很美。</p>
+
+<p><img src="http://kvenux.qiniudn.com/QQ%E6%88%AA%E5%9B%BE20141016220637.png" alt="csv"></p>
+
+<p>话说我应该看看Threads怎么写的。</p>
+
+<h2>Python真是创造力的源泉</h2>
+
+<p>怪不得是很受黑客欢迎的语言。有什么想法分分钟搞出来，越来越喜欢把玩python了。
+另外，得到的结果的600多K的表格，9000多条小区信息，其实还可以得到更多有规律的信息。这些程序员网站写得这么糙，不懂得隐藏商业秘密。不过，在这个时代，信息都应当是免费的。</p>
+
+<p>好了，那么在这个程序运行之前，我要获取到某些信息智能繁琐的点点点，组织很松散。但不可否认的一点是，计算机处理过的东西，是会留下痕迹的——信息会以某种规律呈现。将它们组织之后呢，我指的是这个程序完毕后，帝都所有小区的基本信息都有了呀。拿它可以来做一些更有意思的事情。那么，问题又来了，除了小区，其实人们在信息时代抽象化了很多实体行业，产生了大量的信息，把这些信息收集起来呢？这就是大数据所谓牛逼所谓恐怖的地方吧。</p>
+
+    </div>
+    <hr>
+    <!--<div id="disqus_thread">-->
+  <!--<button type="button" name="kvenux" class="btn btn-default show-commend">显示评论</button>-->
+  <!--</div>-->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'kvenux'; // required: replace example with your forum shortname
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+  </div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="position:fixed;right:20px;top:10px;">
+  <button id="nav_btn" class="btn btn-primary">
+    <i class="fa fa-2x fa-navicon"></i>
+  </button>
+</div>
+<script type="text/javascript" src="/public/js/jquery.js"></script>
+<script type="text/javascript" src="/public/js/bootstrap.js"></script>
+<script src="/public/js/jquery.pjax.js"></script>
+<script src="/public/js/prettify/prettify.js"></script>
+<script src="/public/js/base.js"></script>
+<script>
+    $('a[href="#技术"]').tab('show');
+</script>
+
+  <!--<script>-->
+  <!--(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){-->
+       <!--(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),-->
+       <!--m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)-->
+       <!--})(window,document,'script','//www.google-analytics.com/analytics.js','ga');-->
+       <!--ga('create', '', '');-->
+       <!--ga('send', 'pageview');-->
+<!--</script>-->
+<script type="text/javascript">
+  var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+  document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd375c73c33a01c83cb5f9d2e87e54b5b' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+</body>
+</html>

@@ -1,0 +1,473 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+<title>将Android Studio工程转换到Eclipse下 | Keven's Blog</title>
+<meta name="author" content="Keven">
+
+  
+    <link rel="shortcut icon" href="http://kvenux.qiniudn.com/lion.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/bootstrap.css">
+    <link rel="stylesheet" href="/public/css/font-awesome.css">
+    <link rel="stylesheet" href="/public/js/prettify/prettify.css">
+    <link rel="stylesheet" href="/public/css/base.css">
+    <link href="/pages/atom.xml" rel="alternate" title="Keven's Blog" type="application/atom+xml">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 aside visible-md visible-lg">
+  <div class="row">
+    <div class="col-md-3 col-xs-3 aside1">
+      <br>
+      <a class="pjaxlink" href="/"><img src="http://kvenux.qiniudn.com/lion.png" class="img-circle avatar"></a>
+      <br><br>
+      <ul class="nav nav-pills nav-stacked">
+        
+          <li><a href="#技术" data-toggle="tab">技术</a></li>
+        
+          <li><a href="#笔记" data-toggle="tab">笔记</a></li>
+        
+          <li><a href="#观点" data-toggle="tab">观点</a></li>
+        
+          <li><a href="#toastmaster" data-toggle="tab">toastmaster</a></li>
+        
+        <li><a href="#tags" data-toggle="tab">TAGS</a></li>
+        <li><a class="pjaxlink" href="/pages/archive.html">归档</a></li>
+        <li><a class="pjaxlink" href="/pages/about.html">关于</a></li>
+      </ul>
+      <div class="aside1_bottom">
+        <table class="table table-condensed">
+          <tr>
+            <td><a href="/pages/atom.xml" target="_blank"><i class="fa fa-rss fa-2x"></i></a></td>
+            <td><a href="mailto:buaasjw@gmail.com"><i class="fa fa-envelope-o fa-2x"></i></a></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="col-md-9 col-xs-9 aside2">
+      <div class="row">
+        <div class="tab-content">
+           
+            <div class="tab-pane" id="技术">
+              <div class="list-group">
+                <h2 class="center">技术</h2>
+                
+                  <a href="/2014/11/27/transfrom-studio-to-eclipse.html" class="list-group-item pjaxlink">将Android Studio工程转换到Eclipse下</a>
+                
+                  <a href="/2014/11/23/js-sendwechat.html" class="list-group-item pjaxlink">利用js定时发送微信</a>
+                
+                  <a href="/2014/11/17/nodejs-webot.html" class="list-group-item pjaxlink">利用nodejs搭建微信机器人</a>
+                
+                  <a href="/2014/10/16/python-get-roomnum.html" class="list-group-item pjaxlink">Python抓取地产小区数据</a>
+                
+                  <a href="/2014/09/02/how-to-bulid-your-personal-blog.html" class="list-group-item pjaxlink">如何优雅地搭建博客</a>
+                
+              </div>
+            </div>
+           
+            <div class="tab-pane" id="笔记">
+              <div class="list-group">
+                <h2 class="center">笔记</h2>
+                
+                  <a href="/2014/11/18/intel-tough-man.html" class="list-group-item pjaxlink">浪潮之巅——Intel和他的x86</a>
+                
+                  <a href="/2014/10/14/my-reading-notes.html" class="list-group-item pjaxlink">我的笔记这样写</a>
+                
+                  <a href="/2014/10/14/hackers-2.html" class="list-group-item pjaxlink">黑客与画家 第二章 黑客也是创造者</a>
+                
+              </div>
+            </div>
+           
+            <div class="tab-pane" id="观点">
+              <div class="list-group">
+                <h2 class="center">观点</h2>
+                
+                  <a href="/2014/10/14/write-down-your-blog.html" class="list-group-item pjaxlink">写下你的博客</a>
+                
+              </div>
+            </div>
+           
+            <div class="tab-pane" id="toastmaster">
+              <div class="list-group">
+                <h2 class="center">toastmaster</h2>
+                
+                  <a href="/2014/11/10/CC1-run-for-your-life.html" class="list-group-item pjaxlink">CC1 IceBreaker---Run for Your Life</a>
+                
+              </div>
+            </div>
+          
+          <div class="tab-pane" id="tags">
+            <div class="panel-group" id="accordion">
+              <h2 class="center">TAGS</h2>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#Blog">Blog</a>
+                      <span class="badge pull-right">2</span>
+                    </h4>
+                  </div>
+                  <div id="Blog" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/10/14/write-down-your-blog.html' class="list-group-item pjaxlink">
+                        写下你的博客
+                      </a>
+                    
+                      <a  href='/2014/09/02/how-to-bulid-your-personal-blog.html' class="list-group-item pjaxlink">
+                        如何优雅地搭建博客
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#Jekyll">Jekyll</a>
+                      <span class="badge pull-right">1</span>
+                    </h4>
+                  </div>
+                  <div id="Jekyll" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/09/02/how-to-bulid-your-personal-blog.html' class="list-group-item pjaxlink">
+                        如何优雅地搭建博客
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#GitHub">GitHub</a>
+                      <span class="badge pull-right">1</span>
+                    </h4>
+                  </div>
+                  <div id="GitHub" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/09/02/how-to-bulid-your-personal-blog.html' class="list-group-item pjaxlink">
+                        如何优雅地搭建博客
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#GitCafe">GitCafe</a>
+                      <span class="badge pull-right">1</span>
+                    </h4>
+                  </div>
+                  <div id="GitCafe" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/09/02/how-to-bulid-your-personal-blog.html' class="list-group-item pjaxlink">
+                        如何优雅地搭建博客
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#Markdown">Markdown</a>
+                      <span class="badge pull-right">1</span>
+                    </h4>
+                  </div>
+                  <div id="Markdown" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/09/02/how-to-bulid-your-personal-blog.html' class="list-group-item pjaxlink">
+                        如何优雅地搭建博客
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#SAE">SAE</a>
+                      <span class="badge pull-right">1</span>
+                    </h4>
+                  </div>
+                  <div id="SAE" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/09/02/how-to-bulid-your-personal-blog.html' class="list-group-item pjaxlink">
+                        如何优雅地搭建博客
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#WordPress">WordPress</a>
+                      <span class="badge pull-right">1</span>
+                    </h4>
+                  </div>
+                  <div id="WordPress" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/09/02/how-to-bulid-your-personal-blog.html' class="list-group-item pjaxlink">
+                        如何优雅地搭建博客
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#Artist">Artist</a>
+                      <span class="badge pull-right">1</span>
+                    </h4>
+                  </div>
+                  <div id="Artist" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/10/14/hackers-2.html' class="list-group-item pjaxlink">
+                        黑客与画家 第二章 黑客也是创造者
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#ReadingNotes">ReadingNotes</a>
+                      <span class="badge pull-right">1</span>
+                    </h4>
+                  </div>
+                  <div id="ReadingNotes" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/10/14/my-reading-notes.html' class="list-group-item pjaxlink">
+                        我的笔记这样写
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#Thinking">Thinking</a>
+                      <span class="badge pull-right">1</span>
+                    </h4>
+                  </div>
+                  <div id="Thinking" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/10/14/write-down-your-blog.html' class="list-group-item pjaxlink">
+                        写下你的博客
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#Python">Python</a>
+                      <span class="badge pull-right">1</span>
+                    </h4>
+                  </div>
+                  <div id="Python" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/10/16/python-get-roomnum.html' class="list-group-item pjaxlink">
+                        Python抓取地产小区数据
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#WebCrawler">WebCrawler</a>
+                      <span class="badge pull-right">1</span>
+                    </h4>
+                  </div>
+                  <div id="WebCrawler" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/10/16/python-get-roomnum.html' class="list-group-item pjaxlink">
+                        Python抓取地产小区数据
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#NodeJS">NodeJS</a>
+                      <span class="badge pull-right">1</span>
+                    </h4>
+                  </div>
+                  <div id="NodeJS" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/11/17/nodejs-webot.html' class="list-group-item pjaxlink">
+                        利用nodejs搭建微信机器人
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#JavaScript">JavaScript</a>
+                      <span class="badge pull-right">2</span>
+                    </h4>
+                  </div>
+                  <div id="JavaScript" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/11/23/js-sendwechat.html' class="list-group-item pjaxlink">
+                        利用js定时发送微信
+                      </a>
+                    
+                      <a  href='/2014/11/17/nodejs-webot.html' class="list-group-item pjaxlink">
+                        利用nodejs搭建微信机器人
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#Android">Android</a>
+                      <span class="badge pull-right">1</span>
+                    </h4>
+                  </div>
+                  <div id="Android" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/11/27/transfrom-studio-to-eclipse.html' class="list-group-item pjaxlink">
+                        将Android Studio工程转换到Eclipse下
+                      </a>
+                    
+                  </div>
+                </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12 aside3">
+        <div id="container">
+          <div id="pjax">
+            <div class="row">
+  <div class="col-md-12 aside3-title">
+    <br>
+    <h2 id="#identifier">将Android Studio工程转换到Eclipse下</h2>
+    2014年11月27日
+  </div>
+  <div class="col-md-12 aside3-content">
+    <!-- 目录 -->
+<div class="content">
+    <h3><a href="javascript:;" id="content_btn">[目录]</a></h3>
+    <div id="content_table" style="display:none;">
+        <div id="nav"></div>
+    </div>
+</div>
+
+    <hr>
+    <div id="content">
+      <p>不要问我为什么这么做，就是这么任性。
+╮(╯▽╰)╭其实渣渣网络表示满足不了gradle联网的需求。</p>
+
+<h3>1.新建工程</h3>
+
+<p>工程名称随意，包名要和原工程工程一致，直接去找原来工程的.java，像如下字段:</p>
+
+<blockquote>
+<p>package com.oguzdev.circularfloatingactionmenu.samples;</p>
+</blockquote>
+
+<p><img src="http://kvenux.qiniudn.com/newpro.jpg" alt="此处输入图片的描述"></p>
+
+<p>若是Lib工程，取消：</p>
+
+<ul>
+<li>Create custom launcher icon</li>
+<li>Create acvtivity</li>
+</ul>
+
+<p>勾上：Mark this project as a library</p>
+
+<h3>2. Ctrl C&amp;V</h3>
+
+<p>把原工程的src, res, AndroidManifest复制到新工程，覆盖即可。</p>
+
+<p><img src="http://kvenux.qiniudn.com/transform.png" alt="此处输入图片的描述"></p>
+
+<p>可以看到目录里面都是与gradle有关的文件，那个AndroidTest貌似是Studio每次建工程都有，不用管它。有用的文件都在main下面。</p>
+
+<p>方法很简单，出bug再说吧~</p>
+
+    </div>
+    <hr>
+    <!--<div id="disqus_thread">-->
+  <!--<button type="button" name="kvenux" class="btn btn-default show-commend">显示评论</button>-->
+  <!--</div>-->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'kvenux'; // required: replace example with your forum shortname
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+  </div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="position:fixed;right:20px;top:10px;">
+  <button id="nav_btn" class="btn btn-primary">
+    <i class="fa fa-2x fa-navicon"></i>
+  </button>
+</div>
+<script type="text/javascript" src="/public/js/jquery.js"></script>
+<script type="text/javascript" src="/public/js/bootstrap.js"></script>
+<script src="/public/js/jquery.pjax.js"></script>
+<script src="/public/js/prettify/prettify.js"></script>
+<script src="/public/js/base.js"></script>
+<script>
+    $('a[href="#技术"]').tab('show');
+</script>
+
+  <!--<script>-->
+  <!--(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){-->
+       <!--(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),-->
+       <!--m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)-->
+       <!--})(window,document,'script','//www.google-analytics.com/analytics.js','ga');-->
+       <!--ga('create', '', '');-->
+       <!--ga('send', 'pageview');-->
+<!--</script>-->
+<script type="text/javascript">
+  var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+  document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd375c73c33a01c83cb5f9d2e87e54b5b' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+</body>
+</html>

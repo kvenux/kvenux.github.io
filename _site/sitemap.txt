@@ -1,0 +1,32 @@
+
+  /pages/about.html
+
+  /pages/archive.html
+
+  /pages/atom.xml
+
+  /index.html
+
+  /sitemap.txt
+
+
+
+  /2014/11/27/transfrom-studio-to-eclipse.html
+
+  /2014/11/23/js-sendwechat.html
+
+  /2014/11/18/intel-tough-man.html
+
+  /2014/11/17/nodejs-webot.html
+
+  /2014/11/10/CC1-run-for-your-life.html
+
+  /2014/10/16/python-get-roomnum.html
+
+  /2014/10/14/write-down-your-blog.html
+
+  /2014/10/14/my-reading-notes.html
+
+  /2014/10/14/hackers-2.html
+
+  /2014/09/02/how-to-bulid-your-personal-blog.html

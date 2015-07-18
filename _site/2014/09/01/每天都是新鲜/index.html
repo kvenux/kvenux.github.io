@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Introducing Lanyon &middot; Keven's Blog
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <!--<link rel="stylesheet" href="http://fonts.useso.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">-->
+  <!--<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">-->
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body class="theme-base-05" >
+  <!--<body bgcolor="black">-->
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>凯文大帝</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/about/">About</a>
+        
+      
+    
+      
+    
+      
+        
+      
+    
+
+    <!--<a class="sidebar-nav-item" href="https://github.com/kvenux/archive/v1.0.0.zip">Download</a>-->
+    <a class="sidebar-nav-item" href="https://github.com/kvenux">GitHub project</a>
+    <span class="sidebar-nav-item">Currently v1.0.0</span>
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2014. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Keven's Blog</a>
+            <small>Unplaned adventure in this beautiful world</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <h1 class="post-title">Introducing Lanyon</h1>
+  <span class="post-date">01 Sep 2014</span>
+  <h1 id="每天都是新鲜">每天都是新鲜</h1>
+
+<p><strong>马克飞象</strong>是一款专为印象笔记（Evernote）打造的Markdown编辑器，通过精心的设计与技术实现，配合印象笔记强大的存储能力，带来前所未有的书写体验。特点概述：</p>
+
+<ul>
+<li><strong>功能丰富</strong> ：支持高亮代码块、插入 <em>LaTex</em> 公式，工作学习好帮手</li>
+<li><strong>得心应手</strong> ：支持插入图片，无论是本地上传/图片URL/拖放图片/直接截图粘贴，随心所欲</li>
+<li><strong>深度整合</strong> ：支持选择笔记本和添加标签，支持从印象笔记跳转编辑，轻松管理</li>
+</ul>
+
+<hr>
+
+<h3 id="markdown简介">Markdown简介</h3>
+
+<blockquote>
+<p>Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档，然后转换成格式丰富的HTML页面。    —— <a href="https://zh.wikipedia.org/wiki/Markdown">维基百科</a></p>
+</blockquote>
+
+<p>正如您在阅读的这份文档，它使用简单的符号标识不同的标题，将某些文字标记为<strong>粗体</strong>或者<em>斜体</em>，下面列举了几个高级功能，更多语法请按<code>Ctrl + /</code>查看帮助。 </p>
+
+<h4 id="代码块">代码块</h4>
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="nd">@requires_authorization</span>
+<span class="k">def</span> <span class="nf">somefunc</span><span class="p">(</span><span class="n">param1</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">,</span> <span class="n">param2</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;A docstring&#39;&#39;&#39;</span>
+    <span class="k">if</span> <span class="n">param1</span> <span class="o">&gt;</span> <span class="n">param2</span><span class="p">:</span> <span class="c"># interesting</span>
+        <span class="k">print</span> <span class="s">&#39;Greater&#39;</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">param2</span> <span class="o">-</span> <span class="n">param1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="ow">or</span> <span class="bp">None</span>
+<span class="k">class</span> <span class="nc">SomeClass</span><span class="p">:</span>
+    <span class="k">pass</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">message</span> <span class="o">=</span> <span class="s">&#39;&#39;&#39;interpreter</span>
+<span class="s">... prompt&#39;&#39;&#39;</span>
+</code></pre></div>
+<h4 id="latex-公式">LaTex 公式</h4>
+
+<p>$$  x = \dfrac{-b \pm \sqrt{b<sup>2</sup> - 4ac}}{2a} $$</p>
+
+<h4 id="表格">表格</h4>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Item</th>
+<th style="text-align: right">Value</th>
+<th style="text-align: center">Qty</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">Computer</td>
+<td style="text-align: right">1600 USD</td>
+<td style="text-align: center">5</td>
+</tr>
+<tr>
+<td style="text-align: left">Phone</td>
+<td style="text-align: right">12 USD</td>
+<td style="text-align: center">12</td>
+</tr>
+<tr>
+<td style="text-align: left">Pipe</td>
+<td style="text-align: right">1 USD</td>
+<td style="text-align: center">234</td>
+</tr>
+</tbody></table>
+
+<h3 id="印象笔记相关">印象笔记相关</h3>
+
+<h4 id="笔记本和标签">笔记本和标签</h4>
+
+<p><strong>马克飞象</strong>增加了<code>@(笔记本)[标签A|标签B]</code>语法, 以选择笔记本和添加标签。 <strong>绑定账号后</strong>， 输入<code>(</code>自动会出现笔记本列表，请从中选择。自己纯手工输入无效。</p>
+
+<h4 id="标题">标题</h4>
+
+<p><strong>马克飞象</strong>会自动使用文档内出现的第一个标题作为笔记标题。例如本文，就是第一行的 <code>欢迎使用马克飞象</code>。</p>
+
+<h4 id="快捷编辑">快捷编辑</h4>
+
+<p>保存在印象笔记中的笔记，右上角会有一个红色的编辑按钮，点击后会回到<strong>马克飞象</strong>中打开并编辑该笔记。</p>
+
+<blockquote>
+<p><strong>注意：</strong>目前用户在印象笔记中单方面做的任何修改，马克飞象是无法自动感知和更新的。所以请务必回到马克飞象编辑。</p>
+</blockquote>
+
+<h4 id="数据同步">数据同步</h4>
+
+<p><strong>马克飞象</strong>通过<strong>将Markdown原文以隐藏内容保存在笔记中</strong>的精妙设计，实现了对Markdown的存储和再次编辑。既解决了其他产品只是单向导出HTML的单薄，又规避了服务端存储Markdown带来的隐私安全问题。这样，服务端仅作为对印象笔记 API调用和数据转换之用。</p>
+
+<blockquote>
+<p><strong>隐私声明：用户所有的笔记数据，均保存在印象笔记中。马克飞象不存储用户的任何笔记数据。</strong></p>
+</blockquote>
+
+<h4 id="离线存储">离线存储</h4>
+
+<p><strong>马克飞象</strong>使用浏览器离线存储将内容实时保存在本地，不必担心网络断掉或浏览器崩溃。为了节省空间和避免冲突，已同步至印象笔记并且不再修改的笔记将删除部分本地缓存，不过依然可以随时通过<code>文档管理</code>打开。</p>
+
+<h3 id="编辑器">编辑器</h3>
+
+<h4 id="界面">界面</h4>
+
+<p>专业版编辑器摒弃了笨重的常驻顶部的导航栏，将常见功能改为悬浮图标，最大化可视和编辑区域。
+$Y=x<sup>2$</sup>
+左上角为<code>文档管理</code>入口，快捷键<code>Ctrl + O</code>，可以对文档进行搜索 / 打开 / 新窗口打开 / 在印象笔记中 打开等操作。</p>
+
+<p>中部偏左（编辑区域右上）有四个按钮，分别为：
+- <code>插入图片</code>，鼠标悬浮时，会横向展开更多编辑工具
+- <code>Markdown语法</code> ，快捷键<code>Ctrl + /</code>
+- <code>更换主题</code>
+- <code>切换全屏</code>，最大化编辑器，快捷键<code>Ctrl + Enter</code></p>
+
+<p>右上角有三个按钮，分别为：
+- <code>文档状态</code>：默认闪电图标表示文档在本地保存，尚未同步。点击进行同步，快捷键<code>Ctrl + S</code>
+- <code>新建文档</code>，快捷键<code>Ctrl + Alt + N</code>
+- <code>账号菜单</code>，主要是账号相关操作，例如绑定印象笔记账号。还有一些对当前文档的操作以及其他功能。</p>
+
+<h4 id="常用快捷键">常用快捷键</h4>
+
+<p>帮助    <code>Ctrl + /</code>
+同步文档    <code>Ctrl + S</code>
+创建文档    <code>Ctrl + Alt + N</code>
+最大化编辑器    <code>Ctrl + Enter</code>
+文档管理    <code>Ctrl + O</code>
+系统菜单    <code>Ctrl + M</code></p>
+
+<p>整行移动    <code>Alt + 上/下箭头</code>
+删除整行    <code>Ctrl + D</code></p>
+
+<p>加粗    <code>Ctrl + B</code>
+插入图片    <code>Ctrl + G</code>
+插入链接    <code>Ctrl + L</code>
+提升标题    <code>Ctrl + H</code></p>
+
+<h3 id="关于专业版">关于专业版</h3>
+
+<blockquote>
+<p>注意：专业版目前处于内测阶段，未来可能进行收费。请根据自己的实际情况，合理选择专业版和基础版。</p>
+</blockquote>
+
+<p><strong>马克飞象</strong>专业版相较于基础版，最基本的Markdown转换与同步功能目前基本一致，主要区别在于：
+- 更强大的编辑器，包括快捷键、语法高亮、主题以及非常多的细节优化
+- 稳定可靠的本地文件缓存和管理
+- 细致入微的界面与操作体验
+- 用户自定义配置（<em>开发中</em>）
+- 离线客户端（<em>开发中</em>）
+- 开发者更多的精力投入
+- 更多惊喜</p>
+
+<h3 id="反馈与建议">反馈与建议</h3>
+
+<ul>
+<li>微博：<a href="http://weibo.com/u/2788354117">@马克飞象</a>，<a href="http://weibo.com/ggock" title="开发者个人账号">@GGock</a></li>
+<li>邮箱：<a href="mailto:hustgock@gmail.com">hustgock@gmail.com</a></li>
+</ul>
+
+<hr>
+
+<p>感谢阅读这份帮助文档。请点击右上角，绑定印象笔记账号，开启全新的记录与分享体验吧。</p>
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2014/01/02/introducing-lanyon/">
+            Introducing Lanyon
+            <small>02 Jan 2014</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2014/01/01/example-content/">
+            Example content
+            <small>01 Jan 2014</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2013/12/31/whats-jekyll/">
+            What's Jekyll?
+            <small>31 Dec 2013</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+  </body>
+</html>

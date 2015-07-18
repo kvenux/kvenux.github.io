@@ -1,0 +1,26 @@
+---
+layout: post
+title: 解决MAC下VPN无法连接的问题
+category: 技术
+tags: vpn
+keywords:
+description:
+---
+
+###MTU设置问题
+
+在MAC下连接VPN一直不成功，各种尝试无果遂放弃。后来某豆瓣小组显示是MTU最大值设置的问题。
+
+方法如下：
+
+网络偏好设置——WIFI——高级——硬件，MTU设为1492
+
+原理是不是可以这么理解：PPP协议需要8字节的PPP包头。
+
+###VPN的DNS设置
+
+连上之后发现还上不去，症状是DNS能ping通，域名仍无法解析。
+
+设置了整体网络的DNS无果。。
+
+想起VPN设置里也有DNS，设成能ping通的8.8.8.8，问题解决。

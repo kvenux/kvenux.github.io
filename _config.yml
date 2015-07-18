@@ -1,0 +1,44 @@
+permalink: /:year/:month/:day/:title.html
+paginate: 10
+markdown: redcarpet
+
+# 作者信息
+author:
+  name: Keven
+  email: buaasjw@gmail.com
+  link: http://kvenux.tk
+  weibo: http://weibo.com/kvenux
+  github: http://github.com/kvenux
+
+# 站点信息
+title: Keven's Blog
+description:
+url: http://kvenux.tk
+rss_url: /pages/atom.xml
+
+# gavatar头像及Favicon
+#gavatar: http://yansu-uploads.stor.sinaapp.com/imgs/gavatar.png
+gavatar: http://kvenux.qiniudn.com/lion.png
+#favicon: http://yansu-uploads.stor.sinaapp.com/imgs/favicon.ico
+favicon:  http://kvenux.qiniudn.com/lion.png
+
+# disqus 设置
+disqus:
+  shortname: kvenux
+
+# 主题设置，自动激活某个标签
+active: 技术
+
+# 首页除了最新文章外显示分类
+#cates:
+  #- Python
+  #- OpenStack
+
+# 中文本地化
+locals:
+  tags: TAGS
+  about: 关于
+  newest: LATEST
+  archive: 归档
+  content: 目录
+
