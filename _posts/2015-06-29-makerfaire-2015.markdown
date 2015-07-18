@@ -167,33 +167,35 @@ Arduino凭借其简单易用的平台，已经成了中小学生教学平台的�
 
 ![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/32.png)
 
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/33.png)
+
 还有上次去清华附中展会见到的那个小苹果，这次又是代理商。
 
-![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/33.png)
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/34.png)
 
 ##7. 乐行平衡车
 
 速度20，续航一个小时。带个蓝牙钥匙，售价7988，亮点是有个手机APP，介绍人员说是可以在手机APP上设置导航点，让导航车自己来，我估计是吹的，因为他连APP都没给我看。
 
-![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/34.png)
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/35.png)
 
 ##8. 微软
 
 本次对微软还是比较期待的，因为Win IoT声势浩大。
 但项目很单薄，又个xbox手柄控制小车的项目，基本上都是开源的。
 
-![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/35.png)
 
 还有的LED屏幕，实时更新，控制屏幕的是win IOT
 
 ![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/36.png)
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/37.png)
 
 
 ##9. Looking Glass
 
 一个特别炫酷的LED阵列灯，提供几种模式：根据手机APP预设的程序，或是手机里的音乐，或者是自然音。变化舒畅，家居的geek风。
 
-![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/37.png)
 
 发光单元是电路板一样的LED长条，单条2$不便宜
 
@@ -204,35 +206,38 @@ Arduino凭借其简单易用的平台，已经成了中小学生教学平台的�
 
 ![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/39.png)
 
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/40.png)
+
 ##10. 3W咖啡路演
 
 赶上3W咖啡路演，听了两个项目：
+
 1. 猫小二的鱼漂，京东众筹上又这个项目。其实我很想问个问题：做了智能鱼漂，那钓鱼的乐趣在哪里？后来恍然大悟，市场定位其实是那些想钓鱼但不会钓的大众，他们就图新鲜好玩，怎么会去体会乐趣？所以，从创造市场的角度，我觉得这个项目是成功的。
 2. 智能台灯，类似于小米台灯，手机APP控制，亮点是支持语音识别，加入了各种模式，用起来挺方便。
 
-![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/40.png)
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/41.png)
 
 ##11. Atmel
 
 著名的单片机生产商，当然随着近五年ARM控制器的崛起，单片机早就该退出历史舞台了，只剩下低端的教学平台还在用。其实老版本的APM也是单片机。
 这次带来了专为低功耗设计的ARM Cortex-M0，声称是世界最低功耗。当然性能和Intel、高通相比还是很差的。
 
-![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/41.png)
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/42.png)
 
 Atmel主要用于低成本的设备控制，Cortex-M0也是取代单片机的生力军，51单片机已经可以退出历史舞台了。
 Atmel的代理商为了强调自己能联网，也是够拼的。
 
-![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/42.png)
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/43.png)
 
 ##12. 机械臂
 
 Arduino开源平台搭建的机械臂，教学为主。
 
-![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/43.png)
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/44.png)
 
 还有个uArm机械臂，忘记拍照了，补一张网图。控制笔画图，精度很高。
 
-![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/44.png)
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/45.png)
 
 
 ##13. 羽林小U
@@ -240,7 +245,6 @@ Arduino开源平台搭建的机械臂，教学为主。
 在羽毛球拍末端绑了一个小的加速度传感器
 ，通过手机APP相连得出一些挥拍轨迹数据，可以看到一些平时不注意的专业结果。所谓智能硬件大数据。
 
-![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/45.png)
 
 进一步头脑发散一下，台球杆是不是也可以？
 
