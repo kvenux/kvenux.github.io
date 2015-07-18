@@ -1,0 +1,330 @@
+---
+layout: post
+title:  MakerFarie 2015
+category: 笔记
+tags: Artist
+keywords:
+description:
+---
+
+#Maker Faire
+
+MakerFaire是美国Maker杂志社举办的全世界最大的DIY聚会，已有十年的历史。2011年在深圳办过一次，这是第二次举办。
+这次大会深圳政府大力支持，地理位置安排得很是优越，在南山区科创园的写字楼，紧邻深圳大学。芒果网、大疆、腾讯都离得不远，类似于北京中关村的搜狐科技大厦。展位多，创客数量巨大，其中不乏令人眼前一亮的科技新品。
+
+##1. 大疆经纬M100
+
+大疆算是深圳的明星企业，也是本次展会的重头戏。见到了一个月前发布的经纬M100。
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/01.png)
+
+首先来说M100搭载的避障模块guidance，它由前后左右下，五套传感器组成。
+
+传感器是一个长条，中央是两枚超声波传感器，一枚发送一枚接收，两端是光学摄像头。摄像头规格特别小，没有Kinect/RealSense那样夸张。
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/02.png)
+
+四个设备通过USB与Guidance相连，Guidance再通过一个串行总线连接到飞控。连接图标很隐晦，5根线，是不是I2C还不可知，不过有uart，Uart应该是方便运用到别的平台上。
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/03.png)
+
+摄像头测距原理：通过对左右摄像头提供的图片的相同像素点，计算距离，再通过三角形变换得到深度信息。
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/04.png)
+
+
+开放式机架=没外壳+扩展架，可以挂两块电池，续航最长40min，机架上留了电源、图传等可扩展接口。
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/05.png)
+
+售价2W，学生享受6折优惠1W2，M100飞起来跟悟差不多，包括规格。
+
+##2. Intel Edison
+
+Intel位于本次展会的核心位置，要大力主推其新的物联网处理器，intel Edison
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/06.png)
+
+主芯片是性能强劲，Atom的核，4G的Flash，1G的RAM，双频段的WIFI，蓝牙，100Mhz的用来做控制器的MCU，不得不惊叹于intel的芯片设计能力，将这么多元器件集中到一片邮票大小的芯片上。集成度无能能敌。这是核心板，用来连接可扩展模块。
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/07.png)
+
+外接模块是测量空气污染物的传感器，SO2，NO2，CO2等等，设计理念是大大地降低成本的同时，兼具优异的性能。
+
+还有一个测量空气颗粒的模块，用风扇把空气吸入，内部是激光模块，检测空气中PM2.5，成本大概100刀。为的是把空气指数传感器成本尽可能降低，可以把家里/办公室里的空气指数社交分享。
+Intel的现场售卖非常火爆
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/08.png)
+
+##3. 高通
+
+典型的手机平台，高性能CPU+图形GPU，支持linux，Android，Win10。典型的手机思维，性能强大，能耗居中，当然拿这玩意做控制是不现实的，因为实时特性太差，但做辅助计算机还是很强大的。性能比intel Edison还要强。
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/09.png)
+
+64位4核1.2G ARM A53处理器，1G DDR3，8G ROM，配置赶上现在主流手机了，而且性价比超高。
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/10.png)
+
+一个典型应用，前排右侧是一个摄像头，手划过就能移动茶壶。
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/11.png)
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/12.png)
+
+
+##4. 飞思卡尔
+
+芯片提供商，做了很多低功耗的无线传感器模块，强调以手机为核心的物联网。为了强调自己能联网，也是够拼的。
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/13.png)
+
+提供了一套可扩展的传感器连接方案，从左到右依次是USB连接模块，扬声器，WIFI，LED，舵机控制。这种模块化的设计风格，类似于谷歌提出的模块化手机的概念，当然这是电子器件的模块化，发散一下思维，未来难道要模块化四轴飞行器？
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/14.png)
+
+房间湿度恒温器，像电视盒子那么大，自带WIFI。
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/15.png)
+
+飞思卡尔是给IBM服务器，思科路由器提供芯片的芯片提供商，自身的优势在于处理器的设计，这次他们主打的物联网，还有以路由器为核心的设计方案。每个家庭\企业以核心路由器为基准，所有设备都通过web\手机APP进行监控和管理，这是目前最直观、成熟的解决方案。
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/16.png)
+
+下图是企业级产品
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/17.png)
+
+图有些不清晰，下图是可以联网的可便携终端，上面是各种手机控制端。
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/18.png)
+
+这个图形识别芯片值得关注，以ARM为核心，专用图形处理为辅助的平台。
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/19.png)
+
+还有个汽车仪表盘，大多数汽车都有，不是新鲜物。
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/20.png)
+
+有个空气指数检测仪，家用版。
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/21.png)
+
+##5. Arduino
+
+和taobao上卖的开发板一样，提供了各种各样的传感器。
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/22.png)
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/23.png)
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/24.png)
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/25.png)
+
+Arduino凭借其简单易用的平台，已经成了中小学生教学平台的不二之选，关于青少年创客简直就是这次会议的主题。展区大概1/3的展台都是中小学生教育，千篇一律的电路、小车，基本上是Arduino示例的一个实现，对于我们来说没什么亮点。
+
+有个非常丑，只会抖的机器人。
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/26.png)
+
+也有喜闻乐见的赛车
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/27.png)
+
+现在的小孩儿真会玩！
+
+
+
+##6. 各种机器人
+
+
+机器人还是以日本的为主，国内的大都停留在小玩意上，没有亮点。
+当然有循迹小车
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/28.png)
+
+也有呆头呆脑的机器人，只能行走+举手
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/29.png)
+
+还有激烈的机器人大赛，这个忘记拍照片了，机器人都是根据一个模型做出来的，可以在摔倒的情况下站立起来，通过遥控器控制。
+
+比较亮的是日本exii公司提供的机械臂，灵敏度之高令人惊叹。
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/30.png)
+
+握手感觉很轻松，每个手指都可以灵活活动，控制过程就更神奇了，是通过肌肉的电信号变化来判断用户到底是想要做什么。
+
+这次是个无手的残疾人，但小臂健在，仿真手通过对小臂肌肉信号的捕捉，完成对机械手的控制，神奇！
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/31.png)
+
+这是官网的图，通过打印来进行维修。
+
+还有EXO中的原型机，动作缓慢，站上去挺费劲的。
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/32.png)
+
+还有上次去清华附中展会见到的那个小苹果，这次又是代理商。
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/33.png)
+
+##7. 乐行平衡车
+
+速度20，续航一个小时。带个蓝牙钥匙，售价7988，亮点是有个手机APP，介绍人员说是可以在手机APP上设置导航点，让导航车自己来，我估计是吹的，因为他连APP都没给我看。
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/34.png)
+
+##8. 微软
+
+本次对微软还是比较期待的，因为Win IoT声势浩大。
+但项目很单薄，又个xbox手柄控制小车的项目，基本上都是开源的。
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/35.png)
+
+还有的LED屏幕，实时更新，控制屏幕的是win IOT
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/36.png)
+
+
+##9. Looking Glass
+
+一个特别炫酷的LED阵列灯，提供几种模式：根据手机APP预设的程序，或是手机里的音乐，或者是自然音。变化舒畅，家居的geek风。
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/37.png)
+
+发光单元是电路板一样的LED长条，单条2$不便宜
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/38.png)
+
+作者还做了一个3D的模型，每个轴的3D效果都很好。
+作者是个老外，这次的老外不是很多，展位占1/10左右。
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/39.png)
+
+##10. 3W咖啡路演
+
+赶上3W咖啡路演，听了两个项目：
+1. 猫小二的鱼漂，京东众筹上又这个项目。其实我很想问个问题：做了智能鱼漂，那钓鱼的乐趣在哪里？后来恍然大悟，市场定位其实是那些想钓鱼但不会钓的大众，他们就图新鲜好玩，怎么会去体会乐趣？所以，从创造市场的角度，我觉得这个项目是成功的。
+2. 智能台灯，类似于小米台灯，手机APP控制，亮点是支持语音识别，加入了各种模式，用起来挺方便。
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/40.png)
+
+##11. Atmel
+
+著名的单片机生产商，当然随着近五年ARM控制器的崛起，单片机早就该退出历史舞台了，只剩下低端的教学平台还在用。其实老版本的APM也是单片机。
+这次带来了专为低功耗设计的ARM Cortex-M0，声称是世界最低功耗。当然性能和Intel、高通相比还是很差的。
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/41.png)
+
+Atmel主要用于低成本的设备控制，Cortex-M0也是取代单片机的生力军，51单片机已经可以退出历史舞台了。
+Atmel的代理商为了强调自己能联网，也是够拼的。
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/42.png)
+
+##12. 机械臂
+
+Arduino开源平台搭建的机械臂，教学为主。
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/43.png)
+
+还有个uArm机械臂，忘记拍照了，补一张网图。控制笔画图，精度很高。
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/44.png)
+
+
+##13. 羽林小U
+
+在羽毛球拍末端绑了一个小的加速度传感器
+，通过手机APP相连得出一些挥拍轨迹数据，可以看到一些平时不注意的专业结果。所谓智能硬件大数据。
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/45.png)
+
+进一步头脑发散一下，台球杆是不是也可以？
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/46.png)
+
+##14. Ego Car智能后视镜
+
+看到一个智能后视镜比较牛逼，牛逼之处不在于在上面有块屏幕，而是它把行车记录仪巧妙地集成了。它相比于传统行车记录仪的优势：
+
+1. 不用单独架设支架，美观
+2. 可以实时看记录的图像
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/48.png)
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/49.png)
+
+可以做到跟卖车时的选配
+
+##15. 湖南大学的省油车
+
+结构简单，据说1L油1300KM，不知道速度路况是什么要求，不过本科生做出来的，很牛逼了。
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/50.png)
+
+
+##16. 杂七杂八
+
+千篇一律的3D打印机，几乎又1/5的展台都是3D打印机，非常没诚意。
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/51.png)
+
+一个球形的DJ控制，很酷
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/52.png)
+
+没什么卵用的数字沙漏，翻过来倒计时
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/53.png)
+
+3D打印的四轴
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/54.png)
+
+随处可见的悟
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/55.png)
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/56.png)
+
+14岁的韩国小孩儿
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/57.png)
+
+脑力控制项目，一维的，只能看使用者是否专注
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/58.png)
+
+小四轴+一堆吸管，吸管可以扑腾
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/59.png)
+
+自动快餐机
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/60.png)
+
+手工艺品
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/61.png)
+
+音乐作画
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/62.png)
+
+果壳网
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/63.png)
+
+PVBOT机器人团队
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/64.png)
+
+送奶茶的京东
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/65.png)
+
+大黄蜂镇楼，本次直播结束！
+
+![Alt text](http://7xkgqp.com1.z0.glb.clouddn.com/66.png)
