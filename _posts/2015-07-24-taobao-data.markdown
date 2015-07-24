@@ -30,7 +30,7 @@ open('all_page_iphone6.html','w').writelines(lines)
 
 {% endhighlight %}
 
-查看源代码，找到对应的字段。我的方法比较暴力，因为都是逗号分隔的数据，直接用逗号分成了list。匹配响应字段得到结果。
+查看源代码，找到对应的字段。我的方法比较暴力，因为都是逗号分隔的数据，直接用逗号分成了list。匹配相应字段得到结果。
 
 
 {% highlight python %}
